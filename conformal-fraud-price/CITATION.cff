@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: >-
+  Code and results for "Conformal Coverage Guarantees Do Not
+  Reduce the Recall-Alert-Volume Trade-off in Card Fraud
+  Detection"
+message: If you use this software or its results, please cite it.
+type: software
+authors:
+  - family-names: Elbadraoui
+    given-names: Abdellatif
+    email: elbadraoui.abdellatif@uit.ac.ma
+    affiliation: >-
+      Engineering Sciences Laboratory, Ibn Tofail University,
+      Kenitra, Morocco
+    # orcid: 'https://orcid.org/0000-0000-0000-0000'   # À COMPLÉTER
+  - family-names: Mouhssine
+    given-names: Yassine
+    affiliation: >-
+      Engineering Sciences Laboratory, Ibn Tofail University,
+      Kenitra, Morocco
+  - family-names: El Alaoui
+    given-names: Abdelkader
+    affiliation: >-
+      Engineering Sciences Laboratory, Ibn Tofail University,
+      Kenitra, Morocco
+  - family-names: Ouatik El Alaoui
+    given-names: Said
+    affiliation: >-
+      Engineering Sciences Laboratory, Ibn Tofail University,
+      Kenitra, Morocco
+repository-code: 'https://github.com/[USER]/conformal-fraud-price'   # À COMPLÉTER
+license: MIT
+version: 1.0.0
+date-released: '2026-08-07'
+keywords:
+  - conformal prediction
+  - class-conditional coverage
+  - credit card fraud detection
+  - cost-sensitive learning
+  - PSD2
