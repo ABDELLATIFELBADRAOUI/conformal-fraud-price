@@ -1,0 +1,6233 @@
+{
+  "T": [
+    {
+      "dataset": "T",
+      "seed": 42,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.00226,
+          "next_contamination": 0.00226,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.738663
+        },
+        {
+          "iter": 1,
+          "contamination": 0.002259915859629859,
+          "phi": 0.00226,
+          "next_contamination": 0.00226,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.738663
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.738663308816433,
+        "ec_uniform": 0.8062931851499423,
+        "gain_pct": 8.387752442795664,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.016,
+          "precision": 0.7451,
+          "recall": 0.7308,
+          "f1": 0.7379,
+          "mcc": 0.7376,
+          "auprc": 0.7098,
+          "roc_auc": 0.9506,
+          "TP": 38,
+          "FP": 13,
+          "FN": 14,
+          "TN": 42657,
+          "raw_cost": 153,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.00019
+        },
+        "Baseline SPW": {
+          "tau": 0.034,
+          "precision": 0.881,
+          "recall": 0.7115,
+          "f1": 0.7872,
+          "mcc": 0.7915,
+          "auprc": 0.7183,
+          "roc_auc": 0.9488,
+          "TP": 37,
+          "FP": 5,
+          "FN": 15,
+          "TN": 42665,
+          "raw_cost": 155,
+          "ece_out_of_sample_test": 0.00017
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.026,
+          "precision": 0.7358,
+          "recall": 0.75,
+          "f1": 0.7429,
+          "mcc": 0.7426,
+          "auprc": 0.7125,
+          "roc_auc": 0.9485,
+          "TP": 39,
+          "FP": 14,
+          "FN": 13,
+          "TN": 42656,
+          "raw_cost": 144,
+          "ece_out_of_sample_test": 0.00013
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.001103,
+          "cov_marginal": 0.9666,
+          "cov_fraud_class": 0.25,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0635,
+          "ks_fraud": 0.1003,
+          "infl_bound_marginal": 0.177,
+          "infl_bound_fraud": 0.2505,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9668,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.001103,
+          "cov_marginal": 0.9666,
+          "cov_fraud_class": 0.25,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0635,
+          "ks_fraud": 0.1003,
+          "infl_bound_marginal": 0.227,
+          "infl_bound_fraud": 0.3005,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9668,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.7631,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0635,
+          "ks_fraud": 0.1003,
+          "infl_bound_marginal": 0.327,
+          "infl_bound_fraud": 0.4005,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.7631,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001103,
+          "n_approved": 42709,
+          "frauds_among_approved": 39,
+          "lambda_pct": 0.091316,
+          "alert_volume_pct": 0.0304
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.001103,
+          "n_approved": 42709,
+          "frauds_among_approved": 39,
+          "lambda_pct": 0.091316,
+          "alert_volume_pct": 0.0304
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 1e-06,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.016,
+          "precision": 0.7451,
+          "recall": 0.7308,
+          "f1": 0.7379,
+          "mcc": 0.7376,
+          "auprc": 0.7098,
+          "roc_auc": 0.9507,
+          "TP": 38,
+          "FP": 13,
+          "FN": 14,
+          "TN": 42657,
+          "raw_cost": 153
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.016,
+          "precision": 0.76,
+          "recall": 0.7308,
+          "f1": 0.7451,
+          "mcc": 0.7449,
+          "auprc": 0.7282,
+          "roc_auc": 0.9556,
+          "TP": 38,
+          "FP": 12,
+          "FN": 14,
+          "TN": 42658,
+          "raw_cost": 152
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.014,
+          "precision": 0.8478,
+          "recall": 0.75,
+          "f1": 0.7959,
+          "mcc": 0.7972,
+          "auprc": 0.7083,
+          "roc_auc": 0.9522,
+          "TP": 39,
+          "FP": 7,
+          "FN": 13,
+          "TN": 42663,
+          "raw_cost": 137
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.034,
+          "precision": 0.881,
+          "recall": 0.7115,
+          "f1": 0.7872,
+          "mcc": 0.7915,
+          "auprc": 0.7183,
+          "roc_auc": 0.9488,
+          "TP": 37,
+          "FP": 5,
+          "FN": 15,
+          "TN": 42665,
+          "raw_cost": 155,
+          "ece_out_of_sample_test": 0.00017
+        }
+      ],
+      "runtime_min": 9.83
+    },
+    {
+      "dataset": "T",
+      "seed": 43,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.002215,
+          "next_contamination": 0.002215,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.742855
+        },
+        {
+          "iter": 1,
+          "contamination": 0.0022152282578857658,
+          "phi": 0.002215,
+          "next_contamination": 0.002215,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.742855
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.7428553853361,
+        "ec_uniform": 0.808118051910795,
+        "gain_pct": 8.075882777322136,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.014,
+          "precision": 0.8043,
+          "recall": 0.7115,
+          "f1": 0.7551,
+          "mcc": 0.7562,
+          "auprc": 0.6892,
+          "roc_auc": 0.961,
+          "TP": 37,
+          "FP": 9,
+          "FN": 15,
+          "TN": 42661,
+          "raw_cost": 159,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 9e-05
+        },
+        "Baseline SPW": {
+          "tau": 0.012,
+          "precision": 0.8571,
+          "recall": 0.6923,
+          "f1": 0.766,
+          "mcc": 0.7701,
+          "auprc": 0.6809,
+          "roc_auc": 0.9683,
+          "TP": 36,
+          "FP": 6,
+          "FN": 16,
+          "TN": 42664,
+          "raw_cost": 166,
+          "ece_out_of_sample_test": 0.00024
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.03,
+          "precision": 0.7959,
+          "recall": 0.75,
+          "f1": 0.7723,
+          "mcc": 0.7723,
+          "auprc": 0.738,
+          "roc_auc": 0.9492,
+          "TP": 39,
+          "FP": 10,
+          "FN": 13,
+          "TN": 42660,
+          "raw_cost": 140,
+          "ece_out_of_sample_test": 8e-05
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.001253,
+          "cov_marginal": 0.9915,
+          "cov_fraud_class": 0.1731,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0354,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.1208,
+          "infl_bound_fraud": 0.256,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9917,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000948,
+          "cov_marginal": 0.8941,
+          "cov_fraud_class": 0.1731,
+          "target": 0.9,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0354,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.1708,
+          "infl_bound_fraud": 0.306,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8942,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.7651,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0354,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.2708,
+          "infl_bound_fraud": 0.406,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.7651,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001253,
+          "n_approved": 42713,
+          "frauds_among_approved": 43,
+          "lambda_pct": 0.100672,
+          "alert_volume_pct": 0.0211
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000948,
+          "n_approved": 42713,
+          "frauds_among_approved": 43,
+          "lambda_pct": 0.100672,
+          "alert_volume_pct": 0.0211
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 1e-06,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.014,
+          "precision": 0.8043,
+          "recall": 0.7115,
+          "f1": 0.7551,
+          "mcc": 0.7562,
+          "auprc": 0.6892,
+          "roc_auc": 0.9612,
+          "TP": 37,
+          "FP": 9,
+          "FN": 15,
+          "TN": 42661,
+          "raw_cost": 159
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.018,
+          "precision": 0.8372,
+          "recall": 0.6923,
+          "f1": 0.7579,
+          "mcc": 0.7611,
+          "auprc": 0.6866,
+          "roc_auc": 0.9582,
+          "TP": 36,
+          "FP": 7,
+          "FN": 16,
+          "TN": 42663,
+          "raw_cost": 167
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.014,
+          "precision": 0.8864,
+          "recall": 0.75,
+          "f1": 0.8125,
+          "mcc": 0.8151,
+          "auprc": 0.7324,
+          "roc_auc": 0.9711,
+          "TP": 39,
+          "FP": 5,
+          "FN": 13,
+          "TN": 42665,
+          "raw_cost": 135
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.012,
+          "precision": 0.8571,
+          "recall": 0.6923,
+          "f1": 0.766,
+          "mcc": 0.7701,
+          "auprc": 0.6809,
+          "roc_auc": 0.9683,
+          "TP": 36,
+          "FP": 6,
+          "FN": 16,
+          "TN": 42664,
+          "raw_cost": 166,
+          "ece_out_of_sample_test": 0.00024
+        }
+      ],
+      "runtime_min": 9.57
+    },
+    {
+      "dataset": "T",
+      "seed": 44,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.002132,
+          "next_contamination": 0.002132,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.752773
+        },
+        {
+          "iter": 1,
+          "contamination": 0.002132236997503878,
+          "phi": 0.002132,
+          "next_contamination": 0.002132,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.752773
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.7527729366022504,
+        "ec_uniform": 0.8071280854117899,
+        "gain_pct": 6.734389472001581,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.014,
+          "precision": 0.8222,
+          "recall": 0.7115,
+          "f1": 0.7629,
+          "mcc": 0.7646,
+          "auprc": 0.6954,
+          "roc_auc": 0.9669,
+          "TP": 37,
+          "FP": 8,
+          "FN": 15,
+          "TN": 42662,
+          "raw_cost": 158,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.00013
+        },
+        "Baseline SPW": {
+          "tau": 0.02,
+          "precision": 0.881,
+          "recall": 0.7115,
+          "f1": 0.7872,
+          "mcc": 0.7915,
+          "auprc": 0.7203,
+          "roc_auc": 0.9644,
+          "TP": 37,
+          "FP": 5,
+          "FN": 15,
+          "TN": 42665,
+          "raw_cost": 155,
+          "ece_out_of_sample_test": 0.00012
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.016,
+          "precision": 0.8298,
+          "recall": 0.75,
+          "f1": 0.7879,
+          "mcc": 0.7886,
+          "auprc": 0.7331,
+          "roc_auc": 0.9579,
+          "TP": 39,
+          "FP": 8,
+          "FN": 13,
+          "TN": 42662,
+          "raw_cost": 138,
+          "ece_out_of_sample_test": 0.00011
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.001723,
+          "cov_marginal": 0.9901,
+          "cov_fraud_class": 0.1731,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0075,
+          "ks_fraud": 0.1484,
+          "infl_bound_marginal": 0.0651,
+          "infl_bound_fraud": 0.3467,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9903,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000656,
+          "cov_marginal": 0.9238,
+          "cov_fraud_class": 0.1731,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0075,
+          "ks_fraud": 0.1484,
+          "infl_bound_marginal": 0.1151,
+          "infl_bound_fraud": 0.3967,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9239,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000104,
+          "cov_marginal": 0.8861,
+          "cov_fraud_class": 0.1731,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0075,
+          "ks_fraud": 0.1484,
+          "infl_bound_marginal": 0.2151,
+          "infl_bound_fraud": 0.4967,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8862,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001723,
+          "n_approved": 42713,
+          "frauds_among_approved": 43,
+          "lambda_pct": 0.100672,
+          "alert_volume_pct": 0.0211
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000656,
+          "n_approved": 42713,
+          "frauds_among_approved": 43,
+          "lambda_pct": 0.100672,
+          "alert_volume_pct": 0.0211
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000104,
+          "n_approved": 42713,
+          "frauds_among_approved": 43,
+          "lambda_pct": 0.100672,
+          "alert_volume_pct": 0.0211
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.014,
+          "precision": 0.8222,
+          "recall": 0.7115,
+          "f1": 0.7629,
+          "mcc": 0.7646,
+          "auprc": 0.6953,
+          "roc_auc": 0.959,
+          "TP": 37,
+          "FP": 8,
+          "FN": 15,
+          "TN": 42662,
+          "raw_cost": 158
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.024,
+          "precision": 0.8261,
+          "recall": 0.7308,
+          "f1": 0.7755,
+          "mcc": 0.7767,
+          "auprc": 0.7291,
+          "roc_auc": 0.9567,
+          "TP": 38,
+          "FP": 8,
+          "FN": 14,
+          "TN": 42662,
+          "raw_cost": 148
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.028,
+          "precision": 0.8478,
+          "recall": 0.75,
+          "f1": 0.7959,
+          "mcc": 0.7972,
+          "auprc": 0.7329,
+          "roc_auc": 0.9621,
+          "TP": 39,
+          "FP": 7,
+          "FN": 13,
+          "TN": 42663,
+          "raw_cost": 137
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.02,
+          "precision": 0.881,
+          "recall": 0.7115,
+          "f1": 0.7872,
+          "mcc": 0.7915,
+          "auprc": 0.7203,
+          "roc_auc": 0.9644,
+          "TP": 37,
+          "FP": 5,
+          "FN": 15,
+          "TN": 42665,
+          "raw_cost": 155,
+          "ece_out_of_sample_test": 0.00012
+        }
+      ],
+      "runtime_min": 12.24
+    },
+    {
+      "dataset": "T",
+      "seed": 45,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.002164,
+          "next_contamination": 0.002164,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.734518
+        },
+        {
+          "iter": 1,
+          "contamination": 0.0021641567130353733,
+          "phi": 0.002164,
+          "next_contamination": 0.002164,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.734518
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.7345178921474653,
+        "ec_uniform": 0.8021683765817009,
+        "gain_pct": 8.433451929695385,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.016,
+          "precision": 0.8085,
+          "recall": 0.7308,
+          "f1": 0.7677,
+          "mcc": 0.7684,
+          "auprc": 0.7262,
+          "roc_auc": 0.9757,
+          "TP": 38,
+          "FP": 9,
+          "FN": 14,
+          "TN": 42661,
+          "raw_cost": 149,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.00022
+        },
+        "Baseline SPW": {
+          "tau": 0.034,
+          "precision": 0.8864,
+          "recall": 0.75,
+          "f1": 0.8125,
+          "mcc": 0.8151,
+          "auprc": 0.7404,
+          "roc_auc": 0.9514,
+          "TP": 39,
+          "FP": 5,
+          "FN": 13,
+          "TN": 42665,
+          "raw_cost": 135,
+          "ece_out_of_sample_test": 0.00014
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.038,
+          "precision": 0.8864,
+          "recall": 0.75,
+          "f1": 0.8125,
+          "mcc": 0.8151,
+          "auprc": 0.7412,
+          "roc_auc": 0.951,
+          "TP": 39,
+          "FP": 5,
+          "FN": 13,
+          "TN": 42665,
+          "raw_cost": 135,
+          "ece_out_of_sample_test": 0.00019
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000931,
+          "cov_marginal": 0.9921,
+          "cov_fraud_class": 0.3846,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0278,
+          "ks_fraud": 0.1195,
+          "infl_bound_marginal": 0.1057,
+          "infl_bound_fraud": 0.289,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9923,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000911,
+          "cov_marginal": 0.8891,
+          "cov_fraud_class": 0.3846,
+          "target": 0.9,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0278,
+          "ks_fraud": 0.1195,
+          "infl_bound_marginal": 0.1557,
+          "infl_bound_fraud": 0.339,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8891,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000166,
+          "cov_marginal": 0.8283,
+          "cov_fraud_class": 0.3846,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0278,
+          "ks_fraud": 0.1195,
+          "infl_bound_marginal": 0.2557,
+          "infl_bound_fraud": 0.439,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8283,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.000931,
+          "n_approved": 42702,
+          "frauds_among_approved": 32,
+          "lambda_pct": 0.074938,
+          "alert_volume_pct": 0.0468
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000911,
+          "n_approved": 42702,
+          "frauds_among_approved": 32,
+          "lambda_pct": 0.074938,
+          "alert_volume_pct": 0.0468
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000166,
+          "n_approved": 42702,
+          "frauds_among_approved": 32,
+          "lambda_pct": 0.074938,
+          "alert_volume_pct": 0.0468
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.016,
+          "precision": 0.8085,
+          "recall": 0.7308,
+          "f1": 0.7677,
+          "mcc": 0.7684,
+          "auprc": 0.7262,
+          "roc_auc": 0.976,
+          "TP": 38,
+          "FP": 9,
+          "FN": 14,
+          "TN": 42661,
+          "raw_cost": 149
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.016,
+          "precision": 0.7451,
+          "recall": 0.7308,
+          "f1": 0.7379,
+          "mcc": 0.7376,
+          "auprc": 0.7312,
+          "roc_auc": 0.9704,
+          "TP": 38,
+          "FP": 13,
+          "FN": 14,
+          "TN": 42657,
+          "raw_cost": 153
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.042,
+          "precision": 0.8864,
+          "recall": 0.75,
+          "f1": 0.8125,
+          "mcc": 0.8151,
+          "auprc": 0.7312,
+          "roc_auc": 0.9619,
+          "TP": 39,
+          "FP": 5,
+          "FN": 13,
+          "TN": 42665,
+          "raw_cost": 135
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.034,
+          "precision": 0.8864,
+          "recall": 0.75,
+          "f1": 0.8125,
+          "mcc": 0.8151,
+          "auprc": 0.7404,
+          "roc_auc": 0.9514,
+          "TP": 39,
+          "FP": 5,
+          "FN": 13,
+          "TN": 42665,
+          "raw_cost": 135,
+          "ece_out_of_sample_test": 0.00014
+        }
+      ],
+      "runtime_min": 10.88
+    },
+    {
+      "dataset": "T",
+      "seed": 46,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.002241,
+          "next_contamination": 0.002241,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.698503
+        },
+        {
+          "iter": 1,
+          "contamination": 0.0022407640303109618,
+          "phi": 0.002241,
+          "next_contamination": 0.002241,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.698503
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6985031753194887,
+        "ec_uniform": 0.7928183646328906,
+        "gain_pct": 11.896191299387208,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.016,
+          "precision": 0.717,
+          "recall": 0.7308,
+          "f1": 0.7238,
+          "mcc": 0.7235,
+          "auprc": 0.7248,
+          "roc_auc": 0.9593,
+          "TP": 38,
+          "FP": 15,
+          "FN": 14,
+          "TN": 42655,
+          "raw_cost": 155,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 8e-05
+        },
+        "Baseline SPW": {
+          "tau": 0.02,
+          "precision": 0.4194,
+          "recall": 0.75,
+          "f1": 0.5379,
+          "mcc": 0.5601,
+          "auprc": 0.7365,
+          "roc_auc": 0.9511,
+          "TP": 39,
+          "FP": 54,
+          "FN": 13,
+          "TN": 42616,
+          "raw_cost": 184,
+          "ece_out_of_sample_test": 0.00019
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.03,
+          "precision": 0.8478,
+          "recall": 0.75,
+          "f1": 0.7959,
+          "mcc": 0.7972,
+          "auprc": 0.7476,
+          "roc_auc": 0.9651,
+          "TP": 39,
+          "FP": 7,
+          "FN": 13,
+          "TN": 42663,
+          "raw_cost": 137,
+          "ece_out_of_sample_test": 0.00014
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.001155,
+          "cov_marginal": 0.9489,
+          "cov_fraud_class": 0.0,
+          "target": 0.95,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0429,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.1358,
+          "infl_bound_fraud": 0.256,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9491,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.001155,
+          "cov_marginal": 0.9489,
+          "cov_fraud_class": 0.0,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0429,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.1858,
+          "infl_bound_fraud": 0.306,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9491,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.7656,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0429,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.2858,
+          "infl_bound_fraud": 0.406,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.7656,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001155,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.001155,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 1e-06,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.016,
+          "precision": 0.717,
+          "recall": 0.7308,
+          "f1": 0.7238,
+          "mcc": 0.7235,
+          "auprc": 0.7248,
+          "roc_auc": 0.9595,
+          "TP": 38,
+          "FP": 15,
+          "FN": 14,
+          "TN": 42655,
+          "raw_cost": 155
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.018,
+          "precision": 0.76,
+          "recall": 0.7308,
+          "f1": 0.7451,
+          "mcc": 0.7449,
+          "auprc": 0.7095,
+          "roc_auc": 0.9695,
+          "TP": 38,
+          "FP": 12,
+          "FN": 14,
+          "TN": 42658,
+          "raw_cost": 152
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.036,
+          "precision": 0.8298,
+          "recall": 0.75,
+          "f1": 0.7879,
+          "mcc": 0.7886,
+          "auprc": 0.7478,
+          "roc_auc": 0.9665,
+          "TP": 39,
+          "FP": 8,
+          "FN": 13,
+          "TN": 42662,
+          "raw_cost": 138
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.02,
+          "precision": 0.4194,
+          "recall": 0.75,
+          "f1": 0.5379,
+          "mcc": 0.5601,
+          "auprc": 0.7365,
+          "roc_auc": 0.9511,
+          "TP": 39,
+          "FP": 54,
+          "FN": 13,
+          "TN": 42616,
+          "raw_cost": 184,
+          "ece_out_of_sample_test": 0.00019
+        }
+      ],
+      "runtime_min": 11.13
+    },
+    {
+      "dataset": "T",
+      "seed": 47,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.002247,
+          "next_contamination": 0.002247,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.736304
+        },
+        {
+          "iter": 1,
+          "contamination": 0.002247147973417261,
+          "phi": 0.002247,
+          "next_contamination": 0.002247,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.736304
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.73630395346582,
+        "ec_uniform": 0.8020096553229052,
+        "gain_pct": 8.192632273314814,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.012,
+          "precision": 0.7755,
+          "recall": 0.7308,
+          "f1": 0.7525,
+          "mcc": 0.7525,
+          "auprc": 0.7159,
+          "roc_auc": 0.9531,
+          "TP": 38,
+          "FP": 11,
+          "FN": 14,
+          "TN": 42659,
+          "raw_cost": 151,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.00011
+        },
+        "Baseline SPW": {
+          "tau": 0.026,
+          "precision": 0.8636,
+          "recall": 0.7308,
+          "f1": 0.7917,
+          "mcc": 0.7942,
+          "auprc": 0.7102,
+          "roc_auc": 0.92,
+          "TP": 38,
+          "FP": 6,
+          "FN": 14,
+          "TN": 42664,
+          "raw_cost": 146,
+          "ece_out_of_sample_test": 0.00029
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.02,
+          "precision": 0.8478,
+          "recall": 0.75,
+          "f1": 0.7959,
+          "mcc": 0.7972,
+          "auprc": 0.7386,
+          "roc_auc": 0.9673,
+          "TP": 39,
+          "FP": 7,
+          "FN": 13,
+          "TN": 42663,
+          "raw_cost": 137,
+          "ece_out_of_sample_test": 0.00017
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.00172,
+          "cov_marginal": 0.9887,
+          "cov_fraud_class": 0.3077,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0165,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.083,
+          "infl_bound_fraud": 0.256,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.989,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.00055,
+          "cov_marginal": 0.8916,
+          "cov_fraud_class": 0.2885,
+          "target": 0.9,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0165,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.133,
+          "infl_bound_fraud": 0.306,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8917,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.795,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0165,
+          "ks_fraud": 0.103,
+          "infl_bound_marginal": 0.233,
+          "infl_bound_fraud": 0.406,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.7951,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.00172,
+          "n_approved": 42706,
+          "frauds_among_approved": 36,
+          "lambda_pct": 0.084297,
+          "alert_volume_pct": 0.0375
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.00055,
+          "n_approved": 42707,
+          "frauds_among_approved": 37,
+          "lambda_pct": 0.086637,
+          "alert_volume_pct": 0.0351
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 1e-06,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.012,
+          "precision": 0.7755,
+          "recall": 0.7308,
+          "f1": 0.7525,
+          "mcc": 0.7525,
+          "auprc": 0.7159,
+          "roc_auc": 0.9533,
+          "TP": 38,
+          "FP": 11,
+          "FN": 14,
+          "TN": 42659,
+          "raw_cost": 151
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.022,
+          "precision": 0.7917,
+          "recall": 0.7308,
+          "f1": 0.76,
+          "mcc": 0.7603,
+          "auprc": 0.7175,
+          "roc_auc": 0.9687,
+          "TP": 38,
+          "FP": 10,
+          "FN": 14,
+          "TN": 42660,
+          "raw_cost": 150
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.078,
+          "precision": 0.8667,
+          "recall": 0.75,
+          "f1": 0.8041,
+          "mcc": 0.806,
+          "auprc": 0.7298,
+          "roc_auc": 0.9679,
+          "TP": 39,
+          "FP": 6,
+          "FN": 13,
+          "TN": 42664,
+          "raw_cost": 136
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.026,
+          "precision": 0.8636,
+          "recall": 0.7308,
+          "f1": 0.7917,
+          "mcc": 0.7942,
+          "auprc": 0.7102,
+          "roc_auc": 0.92,
+          "TP": 38,
+          "FP": 6,
+          "FN": 14,
+          "TN": 42664,
+          "raw_cost": 146,
+          "ece_out_of_sample_test": 0.00029
+        }
+      ],
+      "runtime_min": 10.12
+    },
+    {
+      "dataset": "T",
+      "seed": 48,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.002158,
+          "next_contamination": 0.002158,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.709083
+        },
+        {
+          "iter": 1,
+          "contamination": 0.0021577727699290746,
+          "phi": 0.002158,
+          "next_contamination": 0.002158,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.709083
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.7090825188013926,
+        "ec_uniform": 0.7944328732335068,
+        "gain_pct": 10.743557738833298,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.014,
+          "precision": 0.8222,
+          "recall": 0.7115,
+          "f1": 0.7629,
+          "mcc": 0.7646,
+          "auprc": 0.709,
+          "roc_auc": 0.9581,
+          "TP": 37,
+          "FP": 8,
+          "FN": 15,
+          "TN": 42662,
+          "raw_cost": 158,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.00015
+        },
+        "Baseline SPW": {
+          "tau": 0.018,
+          "precision": 0.9,
+          "recall": 0.6923,
+          "f1": 0.7826,
+          "mcc": 0.7891,
+          "auprc": 0.6988,
+          "roc_auc": 0.9737,
+          "TP": 36,
+          "FP": 4,
+          "FN": 16,
+          "TN": 42666,
+          "raw_cost": 164,
+          "ece_out_of_sample_test": 0.00034
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.024,
+          "precision": 0.8298,
+          "recall": 0.75,
+          "f1": 0.7879,
+          "mcc": 0.7886,
+          "auprc": 0.7214,
+          "roc_auc": 0.9543,
+          "TP": 39,
+          "FP": 8,
+          "FN": 13,
+          "TN": 42662,
+          "raw_cost": 138,
+          "ece_out_of_sample_test": 0.0001
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000805,
+          "cov_marginal": 0.9617,
+          "cov_fraud_class": 0.0,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0419,
+          "ks_fraud": 0.1154,
+          "infl_bound_marginal": 0.1339,
+          "infl_bound_fraud": 0.2808,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9618,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000805,
+          "cov_marginal": 0.9617,
+          "cov_fraud_class": 0.0,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0419,
+          "ks_fraud": 0.1154,
+          "infl_bound_marginal": 0.1839,
+          "infl_bound_fraud": 0.3308,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9618,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000805,
+          "cov_marginal": 0.9617,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0419,
+          "ks_fraud": 0.1154,
+          "infl_bound_marginal": 0.2839,
+          "infl_bound_fraud": 0.4308,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9618,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.000805,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000805,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000805,
+          "n_approved": 42722,
+          "frauds_among_approved": 52,
+          "lambda_pct": 0.121717,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.014,
+          "precision": 0.8222,
+          "recall": 0.7115,
+          "f1": 0.7629,
+          "mcc": 0.7646,
+          "auprc": 0.709,
+          "roc_auc": 0.9584,
+          "TP": 37,
+          "FP": 8,
+          "FN": 15,
+          "TN": 42662,
+          "raw_cost": 158
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.02,
+          "precision": 0.8,
+          "recall": 0.6923,
+          "f1": 0.7423,
+          "mcc": 0.7439,
+          "auprc": 0.6936,
+          "roc_auc": 0.965,
+          "TP": 36,
+          "FP": 9,
+          "FN": 16,
+          "TN": 42661,
+          "raw_cost": 169
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.028,
+          "precision": 0.8667,
+          "recall": 0.75,
+          "f1": 0.8041,
+          "mcc": 0.806,
+          "auprc": 0.7441,
+          "roc_auc": 0.9517,
+          "TP": 39,
+          "FP": 6,
+          "FN": 13,
+          "TN": 42664,
+          "raw_cost": 136
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.018,
+          "precision": 0.9,
+          "recall": 0.6923,
+          "f1": 0.7826,
+          "mcc": 0.7891,
+          "auprc": 0.6988,
+          "roc_auc": 0.9737,
+          "TP": 36,
+          "FP": 4,
+          "FN": 16,
+          "TN": 42666,
+          "raw_cost": 164,
+          "ece_out_of_sample_test": 0.00034
+        }
+      ],
+      "runtime_min": 12.81
+    },
+    {
+      "dataset": "T",
+      "seed": 49,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.00226,
+          "next_contamination": 0.00226,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.739981
+        },
+        {
+          "iter": 1,
+          "contamination": 0.002259915859629859,
+          "phi": 0.00226,
+          "next_contamination": 0.00226,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.739981
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.7399810607666019,
+        "ec_uniform": 0.810811180726744,
+        "gain_pct": 8.7357108095939,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.084,
+          "precision": 0.8605,
+          "recall": 0.7115,
+          "f1": 0.7789,
+          "mcc": 0.7822,
+          "auprc": 0.7167,
+          "roc_auc": 0.9595,
+          "TP": 37,
+          "FP": 6,
+          "FN": 15,
+          "TN": 42664,
+          "raw_cost": 156,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 9e-05
+        },
+        "Baseline SPW": {
+          "tau": 0.01,
+          "precision": 0.8667,
+          "recall": 0.75,
+          "f1": 0.8041,
+          "mcc": 0.806,
+          "auprc": 0.7375,
+          "roc_auc": 0.9507,
+          "TP": 39,
+          "FP": 6,
+          "FN": 13,
+          "TN": 42664,
+          "raw_cost": 136,
+          "ece_out_of_sample_test": 0.00017
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.018,
+          "precision": 0.7959,
+          "recall": 0.75,
+          "f1": 0.7723,
+          "mcc": 0.7723,
+          "auprc": 0.7483,
+          "roc_auc": 0.9437,
+          "TP": 39,
+          "FP": 10,
+          "FN": 13,
+          "TN": 42660,
+          "raw_cost": 140,
+          "ece_out_of_sample_test": 0.00019
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.001799,
+          "cov_marginal": 0.9897,
+          "cov_fraud_class": 0.3846,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0257,
+          "ks_fraud": 0.1181,
+          "infl_bound_marginal": 0.1014,
+          "infl_bound_fraud": 0.2863,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9899,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000265,
+          "cov_marginal": 0.9217,
+          "cov_fraud_class": 0.3846,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0257,
+          "ks_fraud": 0.1181,
+          "infl_bound_marginal": 0.1514,
+          "infl_bound_fraud": 0.3363,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9219,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000265,
+          "cov_marginal": 0.9217,
+          "cov_fraud_class": 0.3846,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0257,
+          "ks_fraud": 0.1181,
+          "infl_bound_marginal": 0.2514,
+          "infl_bound_fraud": 0.4363,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9219,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001799,
+          "n_approved": 42702,
+          "frauds_among_approved": 32,
+          "lambda_pct": 0.074938,
+          "alert_volume_pct": 0.0468
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000265,
+          "n_approved": 42702,
+          "frauds_among_approved": 32,
+          "lambda_pct": 0.074938,
+          "alert_volume_pct": 0.0468
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000265,
+          "n_approved": 42702,
+          "frauds_among_approved": 32,
+          "lambda_pct": 0.074938,
+          "alert_volume_pct": 0.0468
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.084,
+          "precision": 0.8605,
+          "recall": 0.7115,
+          "f1": 0.7789,
+          "mcc": 0.7822,
+          "auprc": 0.7167,
+          "roc_auc": 0.9601,
+          "TP": 37,
+          "FP": 6,
+          "FN": 15,
+          "TN": 42664,
+          "raw_cost": 156
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.012,
+          "precision": 0.7308,
+          "recall": 0.7308,
+          "f1": 0.7308,
+          "mcc": 0.7304,
+          "auprc": 0.7095,
+          "roc_auc": 0.956,
+          "TP": 38,
+          "FP": 14,
+          "FN": 14,
+          "TN": 42656,
+          "raw_cost": 154
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.056,
+          "precision": 0.8837,
+          "recall": 0.7308,
+          "f1": 0.8,
+          "mcc": 0.8034,
+          "auprc": 0.7489,
+          "roc_auc": 0.9599,
+          "TP": 38,
+          "FP": 5,
+          "FN": 14,
+          "TN": 42665,
+          "raw_cost": 145
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.01,
+          "precision": 0.8667,
+          "recall": 0.75,
+          "f1": 0.8041,
+          "mcc": 0.806,
+          "auprc": 0.7375,
+          "roc_auc": 0.9507,
+          "TP": 39,
+          "FP": 6,
+          "FN": 13,
+          "TN": 42664,
+          "raw_cost": 136,
+          "ece_out_of_sample_test": 0.00017
+        }
+      ],
+      "runtime_min": 309.05
+    },
+    {
+      "dataset": "T",
+      "seed": 50,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.002241,
+          "next_contamination": 0.002241,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.706453
+        },
+        {
+          "iter": 1,
+          "contamination": 0.0022407640303109618,
+          "phi": 0.002241,
+          "next_contamination": 0.002241,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.706453
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.7064531584480648,
+        "ec_uniform": 0.7977545880047952,
+        "gain_pct": 11.444801562981619,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.01,
+          "precision": 0.7755,
+          "recall": 0.7308,
+          "f1": 0.7525,
+          "mcc": 0.7525,
+          "auprc": 0.7241,
+          "roc_auc": 0.9549,
+          "TP": 38,
+          "FP": 11,
+          "FN": 14,
+          "TN": 42659,
+          "raw_cost": 151,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.00015
+        },
+        "Baseline SPW": {
+          "tau": 0.014,
+          "precision": 0.8571,
+          "recall": 0.6923,
+          "f1": 0.766,
+          "mcc": 0.7701,
+          "auprc": 0.6872,
+          "roc_auc": 0.9412,
+          "TP": 36,
+          "FP": 6,
+          "FN": 16,
+          "TN": 42664,
+          "raw_cost": 166,
+          "ece_out_of_sample_test": 0.0002
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.06,
+          "precision": 0.78,
+          "recall": 0.75,
+          "f1": 0.7647,
+          "mcc": 0.7646,
+          "auprc": 0.7472,
+          "roc_auc": 0.9557,
+          "TP": 39,
+          "FP": 11,
+          "FN": 13,
+          "TN": 42659,
+          "raw_cost": 141,
+          "ece_out_of_sample_test": 0.00019
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000817,
+          "cov_marginal": 0.9466,
+          "cov_fraud_class": 0.1538,
+          "target": 0.95,
+          "marginal_ok": false,
+          "fraud_ok": false,
+          "ks_marginal": 0.0543,
+          "ks_fraud": 0.114,
+          "infl_bound_marginal": 0.1586,
+          "infl_bound_fraud": 0.278,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9468,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000817,
+          "cov_marginal": 0.9466,
+          "cov_fraud_class": 0.1538,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0543,
+          "ks_fraud": 0.114,
+          "infl_bound_marginal": 0.2086,
+          "infl_bound_fraud": 0.328,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9468,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000188,
+          "cov_marginal": 0.8203,
+          "cov_fraud_class": 0.1538,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0543,
+          "ks_fraud": 0.114,
+          "infl_bound_marginal": 0.3086,
+          "infl_bound_fraud": 0.428,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8204,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.000817,
+          "n_approved": 42714,
+          "frauds_among_approved": 44,
+          "lambda_pct": 0.103011,
+          "alert_volume_pct": 0.0187
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000817,
+          "n_approved": 42714,
+          "frauds_among_approved": 44,
+          "lambda_pct": 0.103011,
+          "alert_volume_pct": 0.0187
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000188,
+          "n_approved": 42714,
+          "frauds_among_approved": 44,
+          "lambda_pct": 0.103011,
+          "alert_volume_pct": 0.0187
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.01,
+          "precision": 0.7755,
+          "recall": 0.7308,
+          "f1": 0.7525,
+          "mcc": 0.7525,
+          "auprc": 0.7241,
+          "roc_auc": 0.9553,
+          "TP": 38,
+          "FP": 11,
+          "FN": 14,
+          "TN": 42659,
+          "raw_cost": 151
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.078,
+          "precision": 0.8571,
+          "recall": 0.6923,
+          "f1": 0.766,
+          "mcc": 0.7701,
+          "auprc": 0.7232,
+          "roc_auc": 0.9507,
+          "TP": 36,
+          "FP": 6,
+          "FN": 16,
+          "TN": 42664,
+          "raw_cost": 166
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.044,
+          "precision": 0.8125,
+          "recall": 0.75,
+          "f1": 0.78,
+          "mcc": 0.7804,
+          "auprc": 0.7292,
+          "roc_auc": 0.9608,
+          "TP": 39,
+          "FP": 9,
+          "FN": 13,
+          "TN": 42661,
+          "raw_cost": 139
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.014,
+          "precision": 0.8571,
+          "recall": 0.6923,
+          "f1": 0.766,
+          "mcc": 0.7701,
+          "auprc": 0.6872,
+          "roc_auc": 0.9412,
+          "TP": 36,
+          "FP": 6,
+          "FN": 16,
+          "TN": 42664,
+          "raw_cost": 166,
+          "ece_out_of_sample_test": 0.0002
+        }
+      ],
+      "runtime_min": 9.06
+    },
+    {
+      "dataset": "T",
+      "seed": 51,
+      "splits": {
+        "train": {
+          "n": 156643,
+          "frauds": 350
+        },
+        "val": {
+          "n": 42721,
+          "frauds": 34
+        },
+        "cal": {
+          "n": 42721,
+          "frauds": 56
+        },
+        "test": {
+          "n": 42722,
+          "frauds": 52
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.002171,
+          "next_contamination": 0.002171,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.712261
+        },
+        {
+          "iter": 1,
+          "contamination": 0.0021705406561416726,
+          "phi": 0.002171,
+          "next_contamination": 0.002171,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.712261
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.7122609100646147,
+        "ec_uniform": 0.798180825740933,
+        "gain_pct": 10.764467512303469,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.012,
+          "precision": 0.7917,
+          "recall": 0.7308,
+          "f1": 0.76,
+          "mcc": 0.7603,
+          "auprc": 0.7136,
+          "roc_auc": 0.9562,
+          "TP": 38,
+          "FP": 10,
+          "FN": 14,
+          "TN": 42660,
+          "raw_cost": 150,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.0001
+        },
+        "Baseline SPW": {
+          "tau": 0.032,
+          "precision": 0.8837,
+          "recall": 0.7308,
+          "f1": 0.8,
+          "mcc": 0.8034,
+          "auprc": 0.7281,
+          "roc_auc": 0.9507,
+          "TP": 38,
+          "FP": 5,
+          "FN": 14,
+          "TN": 42665,
+          "raw_cost": 145,
+          "ece_out_of_sample_test": 0.00018
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.042,
+          "precision": 0.8298,
+          "recall": 0.75,
+          "f1": 0.7879,
+          "mcc": 0.7886,
+          "auprc": 0.7456,
+          "roc_auc": 0.9593,
+          "TP": 39,
+          "FP": 8,
+          "FN": 13,
+          "TN": 42662,
+          "raw_cost": 138,
+          "ece_out_of_sample_test": 0.00014
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.001498,
+          "cov_marginal": 0.9889,
+          "cov_fraud_class": 0.5192,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0563,
+          "ks_fraud": 0.0852,
+          "infl_bound_marginal": 0.1627,
+          "infl_bound_fraud": 0.2203,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9891,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.000563,
+          "cov_marginal": 0.9346,
+          "cov_fraud_class": 0.5192,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0563,
+          "ks_fraud": 0.0852,
+          "infl_bound_marginal": 0.2127,
+          "infl_bound_fraud": 0.2703,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9348,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 42721,
+          "n_cal_fraud": 56,
+          "q_hat": 0.00051,
+          "cov_marginal": 0.8715,
+          "cov_fraud_class": 0.5192,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0563,
+          "ks_fraud": 0.0852,
+          "infl_bound_marginal": 0.3127,
+          "infl_bound_fraud": 0.3703,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8717,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001498,
+          "n_approved": 42695,
+          "frauds_among_approved": 25,
+          "lambda_pct": 0.058555,
+          "alert_volume_pct": 0.0632
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000563,
+          "n_approved": 42695,
+          "frauds_among_approved": 25,
+          "lambda_pct": 0.058555,
+          "alert_volume_pct": 0.0632
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.00051,
+          "n_approved": 42695,
+          "frauds_among_approved": 25,
+          "lambda_pct": 0.058555,
+          "alert_volume_pct": 0.0632
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.012,
+          "precision": 0.7917,
+          "recall": 0.7308,
+          "f1": 0.76,
+          "mcc": 0.7603,
+          "auprc": 0.7136,
+          "roc_auc": 0.9563,
+          "TP": 38,
+          "FP": 10,
+          "FN": 14,
+          "TN": 42660,
+          "raw_cost": 150
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.014,
+          "precision": 0.7755,
+          "recall": 0.7308,
+          "f1": 0.7525,
+          "mcc": 0.7525,
+          "auprc": 0.7204,
+          "roc_auc": 0.9528,
+          "TP": 38,
+          "FP": 11,
+          "FN": 14,
+          "TN": 42659,
+          "raw_cost": 151
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.04,
+          "precision": 0.8864,
+          "recall": 0.75,
+          "f1": 0.8125,
+          "mcc": 0.8151,
+          "auprc": 0.7417,
+          "roc_auc": 0.9503,
+          "TP": 39,
+          "FP": 5,
+          "FN": 13,
+          "TN": 42665,
+          "raw_cost": 135
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.032,
+          "precision": 0.8837,
+          "recall": 0.7308,
+          "f1": 0.8,
+          "mcc": 0.8034,
+          "auprc": 0.7281,
+          "roc_auc": 0.9507,
+          "TP": 38,
+          "FP": 5,
+          "FN": 14,
+          "TN": 42665,
+          "raw_cost": 145,
+          "ece_out_of_sample_test": 0.00018
+        }
+      ],
+      "runtime_min": 8.07
+    }
+  ],
+  "K": [
+    {
+      "dataset": "K",
+      "seed": 42,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.007676,
+          "next_contamination": 0.007676,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.671057
+        },
+        {
+          "iter": 1,
+          "contamination": 0.007675578507819303,
+          "phi": 0.007676,
+          "next_contamination": 0.007676,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.671057
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6710573155761513,
+        "ec_uniform": 0.8614034916610269,
+        "gain_pct": 22.097214363252103,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.082,
+          "precision": 0.3441,
+          "recall": 0.8191,
+          "f1": 0.4846,
+          "mcc": 0.5284,
+          "auprc": 0.5452,
+          "roc_auc": 0.9407,
+          "TP": 1757,
+          "FP": 3349,
+          "FN": 388,
+          "TN": 550225,
+          "raw_cost": 7229,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 1e-05,
+          "ece_out_of_sample_test": 0.00026
+        },
+        "Baseline SPW": {
+          "tau": 0.03,
+          "precision": 0.3373,
+          "recall": 0.7981,
+          "f1": 0.4742,
+          "mcc": 0.5163,
+          "auprc": 0.5385,
+          "roc_auc": 0.9918,
+          "TP": 1712,
+          "FP": 3364,
+          "FN": 433,
+          "TN": 550210,
+          "raw_cost": 7694,
+          "ece_out_of_sample_test": 0.00014
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.064,
+          "precision": 0.3363,
+          "recall": 0.7939,
+          "f1": 0.4725,
+          "mcc": 0.5141,
+          "auprc": 0.5518,
+          "roc_auc": 0.9906,
+          "TP": 1703,
+          "FP": 3361,
+          "FN": 442,
+          "TN": 550213,
+          "raw_cost": 7781,
+          "ece_out_of_sample_test": 0.00021
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001433,
+          "cov_marginal": 0.9846,
+          "cov_fraud_class": 0.0112,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0084,
+          "ks_fraud": 0.058,
+          "infl_bound_marginal": 0.0667,
+          "infl_bound_fraud": 0.166,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9852,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001433,
+          "cov_marginal": 0.9846,
+          "cov_fraud_class": 0.0112,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0084,
+          "ks_fraud": 0.058,
+          "infl_bound_marginal": 0.1167,
+          "infl_bound_fraud": 0.216,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9852,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000729,
+          "cov_marginal": 0.8406,
+          "cov_fraud_class": 0.0112,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0084,
+          "ks_fraud": 0.058,
+          "infl_bound_marginal": 0.2167,
+          "infl_bound_fraud": 0.316,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.841,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001433,
+          "n_approved": 555695,
+          "frauds_among_approved": 2121,
+          "lambda_pct": 0.381684,
+          "alert_volume_pct": 0.0043
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.001433,
+          "n_approved": 555695,
+          "frauds_among_approved": 2121,
+          "lambda_pct": 0.381684,
+          "alert_volume_pct": 0.0043
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000729,
+          "n_approved": 555695,
+          "frauds_among_approved": 2121,
+          "lambda_pct": 0.381684,
+          "alert_volume_pct": 0.0043
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.082,
+          "precision": 0.3441,
+          "recall": 0.8191,
+          "f1": 0.4846,
+          "mcc": 0.5284,
+          "auprc": 0.5423,
+          "roc_auc": 0.941,
+          "TP": 1757,
+          "FP": 3349,
+          "FN": 388,
+          "TN": 550225,
+          "raw_cost": 7229
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.066,
+          "precision": 0.331,
+          "recall": 0.8242,
+          "f1": 0.4723,
+          "mcc": 0.5197,
+          "auprc": 0.5496,
+          "roc_auc": 0.9379,
+          "TP": 1768,
+          "FP": 3574,
+          "FN": 377,
+          "TN": 550000,
+          "raw_cost": 7344
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.07,
+          "precision": 0.3521,
+          "recall": 0.7911,
+          "f1": 0.4874,
+          "mcc": 0.5253,
+          "auprc": 0.5324,
+          "roc_auc": 0.9914,
+          "TP": 1697,
+          "FP": 3122,
+          "FN": 448,
+          "TN": 550452,
+          "raw_cost": 7602
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.03,
+          "precision": 0.3373,
+          "recall": 0.7981,
+          "f1": 0.4742,
+          "mcc": 0.5163,
+          "auprc": 0.5385,
+          "roc_auc": 0.9918,
+          "TP": 1712,
+          "FP": 3364,
+          "FN": 433,
+          "TN": 550210,
+          "raw_cost": 7694,
+          "ece_out_of_sample_test": 0.00014
+        }
+      ],
+      "runtime_min": 28.09
+    },
+    {
+      "dataset": "K",
+      "seed": 43,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.008351,
+          "next_contamination": 0.008351,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.68081
+        },
+        {
+          "iter": 1,
+          "contamination": 0.008351433246724839,
+          "phi": 0.008351,
+          "next_contamination": 0.008351,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.68081
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6808101200993066,
+        "ec_uniform": 0.8613141071228507,
+        "gain_pct": 20.95681302916341,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.06,
+          "precision": 0.3119,
+          "recall": 0.8308,
+          "f1": 0.4536,
+          "mcc": 0.5063,
+          "auprc": 0.4843,
+          "roc_auc": 0.9347,
+          "TP": 1782,
+          "FP": 3931,
+          "FN": 363,
+          "TN": 549643,
+          "raw_cost": 7561,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 3e-05,
+          "ece_out_of_sample_test": 0.00032
+        },
+        "Baseline SPW": {
+          "tau": 0.082,
+          "precision": 0.3917,
+          "recall": 0.7748,
+          "f1": 0.5204,
+          "mcc": 0.5486,
+          "auprc": 0.5493,
+          "roc_auc": 0.9919,
+          "TP": 1662,
+          "FP": 2581,
+          "FN": 483,
+          "TN": 550993,
+          "raw_cost": 7411,
+          "ece_out_of_sample_test": 0.00026
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.084,
+          "precision": 0.3628,
+          "recall": 0.7814,
+          "f1": 0.4955,
+          "mcc": 0.53,
+          "auprc": 0.5162,
+          "roc_auc": 0.9908,
+          "TP": 1676,
+          "FP": 2944,
+          "FN": 469,
+          "TN": 550630,
+          "raw_cost": 7634,
+          "ece_out_of_sample_test": 5e-05
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001235,
+          "cov_marginal": 0.9863,
+          "cov_fraud_class": 0.0126,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0029,
+          "ks_fraud": 0.0481,
+          "infl_bound_marginal": 0.0558,
+          "infl_bound_fraud": 0.1462,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9869,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001235,
+          "cov_marginal": 0.9863,
+          "cov_fraud_class": 0.0126,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0029,
+          "ks_fraud": 0.0481,
+          "infl_bound_marginal": 0.1058,
+          "infl_bound_fraud": 0.1962,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9869,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001036,
+          "cov_marginal": 0.8403,
+          "cov_fraud_class": 0.0126,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0029,
+          "ks_fraud": 0.0481,
+          "infl_bound_marginal": 0.2058,
+          "infl_bound_fraud": 0.2962,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8409,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001235,
+          "n_approved": 555692,
+          "frauds_among_approved": 2118,
+          "lambda_pct": 0.381146,
+          "alert_volume_pct": 0.0049
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.001235,
+          "n_approved": 555692,
+          "frauds_among_approved": 2118,
+          "lambda_pct": 0.381146,
+          "alert_volume_pct": 0.0049
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.001036,
+          "n_approved": 555692,
+          "frauds_among_approved": 2118,
+          "lambda_pct": 0.381146,
+          "alert_volume_pct": 0.0049
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.06,
+          "precision": 0.3119,
+          "recall": 0.8308,
+          "f1": 0.4536,
+          "mcc": 0.5063,
+          "auprc": 0.4842,
+          "roc_auc": 0.9352,
+          "TP": 1782,
+          "FP": 3931,
+          "FN": 363,
+          "TN": 549643,
+          "raw_cost": 7561
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.092,
+          "precision": 0.3789,
+          "recall": 0.7981,
+          "f1": 0.5139,
+          "mcc": 0.5476,
+          "auprc": 0.4588,
+          "roc_auc": 0.9373,
+          "TP": 1712,
+          "FP": 2806,
+          "FN": 433,
+          "TN": 550768,
+          "raw_cost": 7136
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.088,
+          "precision": 0.2786,
+          "recall": 0.8107,
+          "f1": 0.4147,
+          "mcc": 0.4722,
+          "auprc": 0.5284,
+          "roc_auc": 0.9896,
+          "TP": 1739,
+          "FP": 4503,
+          "FN": 406,
+          "TN": 549071,
+          "raw_cost": 8563
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.082,
+          "precision": 0.3917,
+          "recall": 0.7748,
+          "f1": 0.5204,
+          "mcc": 0.5486,
+          "auprc": 0.5493,
+          "roc_auc": 0.9919,
+          "TP": 1662,
+          "FP": 2581,
+          "FN": 483,
+          "TN": 550993,
+          "raw_cost": 7411,
+          "ece_out_of_sample_test": 0.00026
+        }
+      ],
+      "runtime_min": 29.46
+    },
+    {
+      "dataset": "K",
+      "seed": 44,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.007922,
+          "next_contamination": 0.007922,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.6391
+        },
+        {
+          "iter": 1,
+          "contamination": 0.007922363640697672,
+          "phi": 0.007922,
+          "next_contamination": 0.007922,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.6391
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6391003703300658,
+        "ec_uniform": 0.8480497012877362,
+        "gain_pct": 24.638807211462666,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.082,
+          "precision": 0.3767,
+          "recall": 0.7907,
+          "f1": 0.5103,
+          "mcc": 0.5434,
+          "auprc": 0.57,
+          "roc_auc": 0.9168,
+          "TP": 1696,
+          "FP": 2806,
+          "FN": 449,
+          "TN": 550768,
+          "raw_cost": 7296,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 1e-05,
+          "ece_out_of_sample_test": 0.00034
+        },
+        "Baseline SPW": {
+          "tau": 0.088,
+          "precision": 0.3651,
+          "recall": 0.7655,
+          "f1": 0.4944,
+          "mcc": 0.5262,
+          "auprc": 0.4364,
+          "roc_auc": 0.9898,
+          "TP": 1642,
+          "FP": 2856,
+          "FN": 503,
+          "TN": 550718,
+          "raw_cost": 7886,
+          "ece_out_of_sample_test": 0.0003
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.052,
+          "precision": 0.3604,
+          "recall": 0.7893,
+          "f1": 0.4949,
+          "mcc": 0.5309,
+          "auprc": 0.496,
+          "roc_auc": 0.9909,
+          "TP": 1693,
+          "FP": 3004,
+          "FN": 452,
+          "TN": 550570,
+          "raw_cost": 7524,
+          "ece_out_of_sample_test": 0.00011
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001001,
+          "cov_marginal": 0.9574,
+          "cov_fraud_class": 0.0079,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0175,
+          "ks_fraud": 0.0482,
+          "infl_bound_marginal": 0.085,
+          "infl_bound_fraud": 0.1463,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.958,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001001,
+          "cov_marginal": 0.9574,
+          "cov_fraud_class": 0.0079,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0175,
+          "ks_fraud": 0.0482,
+          "infl_bound_marginal": 0.135,
+          "infl_bound_fraud": 0.1963,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.958,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000971,
+          "cov_marginal": 0.8304,
+          "cov_fraud_class": 0.0079,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0175,
+          "ks_fraud": 0.0482,
+          "infl_bound_marginal": 0.235,
+          "infl_bound_fraud": 0.2963,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.831,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001001,
+          "n_approved": 555702,
+          "frauds_among_approved": 2128,
+          "lambda_pct": 0.382939,
+          "alert_volume_pct": 0.0031
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.001001,
+          "n_approved": 555702,
+          "frauds_among_approved": 2128,
+          "lambda_pct": 0.382939,
+          "alert_volume_pct": 0.0031
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000971,
+          "n_approved": 555702,
+          "frauds_among_approved": 2128,
+          "lambda_pct": 0.382939,
+          "alert_volume_pct": 0.0031
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.082,
+          "precision": 0.3767,
+          "recall": 0.7907,
+          "f1": 0.5103,
+          "mcc": 0.5434,
+          "auprc": 0.57,
+          "roc_auc": 0.9178,
+          "TP": 1696,
+          "FP": 2806,
+          "FN": 449,
+          "TN": 550768,
+          "raw_cost": 7296
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.092,
+          "precision": 0.3943,
+          "recall": 0.786,
+          "f1": 0.5252,
+          "mcc": 0.5545,
+          "auprc": 0.5444,
+          "roc_auc": 0.919,
+          "TP": 1686,
+          "FP": 2590,
+          "FN": 459,
+          "TN": 550984,
+          "raw_cost": 7180
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.068,
+          "precision": 0.3712,
+          "recall": 0.7641,
+          "f1": 0.4996,
+          "mcc": 0.5301,
+          "auprc": 0.5385,
+          "roc_auc": 0.9912,
+          "TP": 1639,
+          "FP": 2777,
+          "FN": 506,
+          "TN": 550797,
+          "raw_cost": 7837
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.088,
+          "precision": 0.3651,
+          "recall": 0.7655,
+          "f1": 0.4944,
+          "mcc": 0.5262,
+          "auprc": 0.4364,
+          "roc_auc": 0.9898,
+          "TP": 1642,
+          "FP": 2856,
+          "FN": 503,
+          "TN": 550718,
+          "raw_cost": 7886,
+          "ece_out_of_sample_test": 0.0003
+        }
+      ],
+      "runtime_min": 31.99
+    },
+    {
+      "dataset": "K",
+      "seed": 45,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.008023,
+          "next_contamination": 0.008023,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.709198
+        },
+        {
+          "iter": 1,
+          "contamination": 0.008023321195057005,
+          "phi": 0.008023,
+          "next_contamination": 0.008023,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.709198
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.7091978671171841,
+        "ec_uniform": 0.8720722101352766,
+        "gain_pct": 18.676703732231903,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.088,
+          "precision": 0.3113,
+          "recall": 0.8266,
+          "f1": 0.4522,
+          "mcc": 0.5045,
+          "auprc": 0.4915,
+          "roc_auc": 0.9324,
+          "TP": 1773,
+          "FP": 3923,
+          "FN": 372,
+          "TN": 549651,
+          "raw_cost": 7643,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.0004
+        },
+        "Baseline SPW": {
+          "tau": 0.08,
+          "precision": 0.3925,
+          "recall": 0.7632,
+          "f1": 0.5184,
+          "mcc": 0.545,
+          "auprc": 0.5282,
+          "roc_auc": 0.9915,
+          "TP": 1637,
+          "FP": 2534,
+          "FN": 508,
+          "TN": 551040,
+          "raw_cost": 7614,
+          "ece_out_of_sample_test": 0.00022
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.086,
+          "precision": 0.3907,
+          "recall": 0.7678,
+          "f1": 0.5179,
+          "mcc": 0.5455,
+          "auprc": 0.5226,
+          "roc_auc": 0.9906,
+          "TP": 1647,
+          "FP": 2568,
+          "FN": 498,
+          "TN": 551006,
+          "raw_cost": 7548,
+          "ece_out_of_sample_test": 0.00029
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001322,
+          "cov_marginal": 0.981,
+          "cov_fraud_class": 0.0117,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0135,
+          "ks_fraud": 0.0616,
+          "infl_bound_marginal": 0.077,
+          "infl_bound_fraud": 0.1733,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9817,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001322,
+          "cov_marginal": 0.981,
+          "cov_fraud_class": 0.0117,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0135,
+          "ks_fraud": 0.0616,
+          "infl_bound_marginal": 0.127,
+          "infl_bound_fraud": 0.2233,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9817,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001322,
+          "cov_marginal": 0.981,
+          "cov_fraud_class": 0.0117,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0135,
+          "ks_fraud": 0.0616,
+          "infl_bound_marginal": 0.227,
+          "infl_bound_fraud": 0.3233,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9817,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001322,
+          "n_approved": 555694,
+          "frauds_among_approved": 2120,
+          "lambda_pct": 0.381505,
+          "alert_volume_pct": 0.0045
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.001322,
+          "n_approved": 555694,
+          "frauds_among_approved": 2120,
+          "lambda_pct": 0.381505,
+          "alert_volume_pct": 0.0045
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.001322,
+          "n_approved": 555694,
+          "frauds_among_approved": 2120,
+          "lambda_pct": 0.381505,
+          "alert_volume_pct": 0.0045
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.088,
+          "precision": 0.3113,
+          "recall": 0.8266,
+          "f1": 0.4522,
+          "mcc": 0.5045,
+          "auprc": 0.4915,
+          "roc_auc": 0.9323,
+          "TP": 1773,
+          "FP": 3923,
+          "FN": 372,
+          "TN": 549651,
+          "raw_cost": 7643
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.092,
+          "precision": 0.3494,
+          "recall": 0.8061,
+          "f1": 0.4875,
+          "mcc": 0.5282,
+          "auprc": 0.4777,
+          "roc_auc": 0.9363,
+          "TP": 1729,
+          "FP": 3220,
+          "FN": 416,
+          "TN": 550354,
+          "raw_cost": 7380
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.086,
+          "precision": 0.4014,
+          "recall": 0.7613,
+          "f1": 0.5257,
+          "mcc": 0.5506,
+          "auprc": 0.4978,
+          "roc_auc": 0.9907,
+          "TP": 1633,
+          "FP": 2435,
+          "FN": 512,
+          "TN": 551139,
+          "raw_cost": 7555
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.08,
+          "precision": 0.3925,
+          "recall": 0.7632,
+          "f1": 0.5184,
+          "mcc": 0.545,
+          "auprc": 0.5282,
+          "roc_auc": 0.9915,
+          "TP": 1637,
+          "FP": 2534,
+          "FN": 508,
+          "TN": 551040,
+          "raw_cost": 7614,
+          "ece_out_of_sample_test": 0.00022
+        }
+      ],
+      "runtime_min": 28.55
+    },
+    {
+      "dataset": "K",
+      "seed": 46,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.007534,
+          "next_contamination": 0.007534,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.63353
+        },
+        {
+          "iter": 1,
+          "contamination": 0.007533957494065238,
+          "phi": 0.007534,
+          "next_contamination": 0.007534,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.63353
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6335295255337878,
+        "ec_uniform": 0.8445904018018608,
+        "gain_pct": 24.98973180583071,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.08,
+          "precision": 0.3647,
+          "recall": 0.8093,
+          "f1": 0.5028,
+          "mcc": 0.5409,
+          "auprc": 0.4395,
+          "roc_auc": 0.922,
+          "TP": 1736,
+          "FP": 3024,
+          "FN": 409,
+          "TN": 550550,
+          "raw_cost": 7114,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 1e-05,
+          "ece_out_of_sample_test": 0.00034
+        },
+        "Baseline SPW": {
+          "tau": 0.092,
+          "precision": 0.3752,
+          "recall": 0.7818,
+          "f1": 0.507,
+          "mcc": 0.5392,
+          "auprc": 0.5437,
+          "roc_auc": 0.992,
+          "TP": 1677,
+          "FP": 2793,
+          "FN": 468,
+          "TN": 550781,
+          "raw_cost": 7473,
+          "ece_out_of_sample_test": 0.00024
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.08,
+          "precision": 0.3635,
+          "recall": 0.78,
+          "f1": 0.4959,
+          "mcc": 0.53,
+          "auprc": 0.539,
+          "roc_auc": 0.9907,
+          "TP": 1673,
+          "FP": 2930,
+          "FN": 472,
+          "TN": 550644,
+          "raw_cost": 7650,
+          "ece_out_of_sample_test": 0.00025
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000711,
+          "cov_marginal": 0.955,
+          "cov_fraud_class": 0.0,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0028,
+          "ks_fraud": 0.0386,
+          "infl_bound_marginal": 0.0555,
+          "infl_bound_fraud": 0.1271,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9556,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000711,
+          "cov_marginal": 0.955,
+          "cov_fraud_class": 0.0,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0028,
+          "ks_fraud": 0.0386,
+          "infl_bound_marginal": 0.1055,
+          "infl_bound_fraud": 0.1771,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9556,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000679,
+          "cov_marginal": 0.815,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0028,
+          "ks_fraud": 0.0386,
+          "infl_bound_marginal": 0.2055,
+          "infl_bound_fraud": 0.2771,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8155,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.000711,
+          "n_approved": 555719,
+          "frauds_among_approved": 2145,
+          "lambda_pct": 0.385986,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000711,
+          "n_approved": 555719,
+          "frauds_among_approved": 2145,
+          "lambda_pct": 0.385986,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000679,
+          "n_approved": 555719,
+          "frauds_among_approved": 2145,
+          "lambda_pct": 0.385986,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.08,
+          "precision": 0.3647,
+          "recall": 0.8093,
+          "f1": 0.5028,
+          "mcc": 0.5409,
+          "auprc": 0.4395,
+          "roc_auc": 0.9226,
+          "TP": 1736,
+          "FP": 3024,
+          "FN": 409,
+          "TN": 550550,
+          "raw_cost": 7114
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.074,
+          "precision": 0.3746,
+          "recall": 0.8033,
+          "f1": 0.5109,
+          "mcc": 0.5462,
+          "auprc": 0.4304,
+          "roc_auc": 0.9256,
+          "TP": 1723,
+          "FP": 2877,
+          "FN": 422,
+          "TN": 550697,
+          "raw_cost": 7097
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.054,
+          "precision": 0.3597,
+          "recall": 0.7786,
+          "f1": 0.492,
+          "mcc": 0.5267,
+          "auprc": 0.5433,
+          "roc_auc": 0.991,
+          "TP": 1670,
+          "FP": 2973,
+          "FN": 475,
+          "TN": 550601,
+          "raw_cost": 7723
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.092,
+          "precision": 0.3752,
+          "recall": 0.7818,
+          "f1": 0.507,
+          "mcc": 0.5392,
+          "auprc": 0.5437,
+          "roc_auc": 0.992,
+          "TP": 1677,
+          "FP": 2793,
+          "FN": 468,
+          "TN": 550781,
+          "raw_cost": 7473,
+          "ece_out_of_sample_test": 0.00024
+        }
+      ],
+      "runtime_min": 32.71
+    },
+    {
+      "dataset": "K",
+      "seed": 47,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.007765,
+          "next_contamination": 0.007765,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.691461
+        },
+        {
+          "iter": 1,
+          "contamination": 0.00776531855613871,
+          "phi": 0.007765,
+          "next_contamination": 0.007765,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.691461
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6914611427238438,
+        "ec_uniform": 0.8662802697031957,
+        "gain_pct": 20.180435027020557,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.078,
+          "precision": 0.4051,
+          "recall": 0.7739,
+          "f1": 0.5318,
+          "mcc": 0.5577,
+          "auprc": 0.5751,
+          "roc_auc": 0.9241,
+          "TP": 1660,
+          "FP": 2438,
+          "FN": 485,
+          "TN": 551136,
+          "raw_cost": 7288,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 4e-05,
+          "ece_out_of_sample_test": 0.0013
+        },
+        "Baseline SPW": {
+          "tau": 0.078,
+          "precision": 0.382,
+          "recall": 0.7739,
+          "f1": 0.5116,
+          "mcc": 0.5414,
+          "auprc": 0.5254,
+          "roc_auc": 0.9916,
+          "TP": 1660,
+          "FP": 2685,
+          "FN": 485,
+          "TN": 550889,
+          "raw_cost": 7535,
+          "ece_out_of_sample_test": 0.00023
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.078,
+          "precision": 0.4178,
+          "recall": 0.6448,
+          "f1": 0.5071,
+          "mcc": 0.5168,
+          "auprc": 0.5182,
+          "roc_auc": 0.9912,
+          "TP": 1383,
+          "FP": 1927,
+          "FN": 762,
+          "TN": 551647,
+          "raw_cost": 9547,
+          "ece_out_of_sample_test": 0.00081
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001048,
+          "cov_marginal": 0.9839,
+          "cov_fraud_class": 0.0415,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0222,
+          "ks_fraud": 0.1701,
+          "infl_bound_marginal": 0.0944,
+          "infl_bound_fraud": 0.3901,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9845,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001048,
+          "cov_marginal": 0.9839,
+          "cov_fraud_class": 0.0415,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0222,
+          "ks_fraud": 0.1701,
+          "infl_bound_marginal": 0.1444,
+          "infl_bound_fraud": 0.4401,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9845,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001048,
+          "cov_marginal": 0.9839,
+          "cov_fraud_class": 0.0415,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0222,
+          "ks_fraud": 0.1701,
+          "infl_bound_marginal": 0.2444,
+          "infl_bound_fraud": 0.5401,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9845,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001048,
+          "n_approved": 555630,
+          "frauds_among_approved": 2056,
+          "lambda_pct": 0.37003,
+          "alert_volume_pct": 0.016
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.001048,
+          "n_approved": 555630,
+          "frauds_among_approved": 2056,
+          "lambda_pct": 0.37003,
+          "alert_volume_pct": 0.016
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.001048,
+          "n_approved": 555630,
+          "frauds_among_approved": 2056,
+          "lambda_pct": 0.37003,
+          "alert_volume_pct": 0.016
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.078,
+          "precision": 0.4051,
+          "recall": 0.7739,
+          "f1": 0.5318,
+          "mcc": 0.5577,
+          "auprc": 0.5751,
+          "roc_auc": 0.9251,
+          "TP": 1660,
+          "FP": 2438,
+          "FN": 485,
+          "TN": 551136,
+          "raw_cost": 7288
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.074,
+          "precision": 0.3882,
+          "recall": 0.7869,
+          "f1": 0.5199,
+          "mcc": 0.5505,
+          "auprc": 0.5734,
+          "roc_auc": 0.9323,
+          "TP": 1688,
+          "FP": 2660,
+          "FN": 457,
+          "TN": 550914,
+          "raw_cost": 7230
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.08,
+          "precision": 0.36,
+          "recall": 0.7394,
+          "f1": 0.4843,
+          "mcc": 0.5135,
+          "auprc": 0.5256,
+          "roc_auc": 0.9905,
+          "TP": 1586,
+          "FP": 2819,
+          "FN": 559,
+          "TN": 550755,
+          "raw_cost": 8409
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.078,
+          "precision": 0.382,
+          "recall": 0.7739,
+          "f1": 0.5116,
+          "mcc": 0.5414,
+          "auprc": 0.5254,
+          "roc_auc": 0.9916,
+          "TP": 1660,
+          "FP": 2685,
+          "FN": 485,
+          "TN": 550889,
+          "raw_cost": 7535,
+          "ece_out_of_sample_test": 0.00023
+        }
+      ],
+      "runtime_min": 28.63
+    },
+    {
+      "dataset": "K",
+      "seed": 48,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.007577,
+          "next_contamination": 0.007577,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.6499
+        },
+        {
+          "iter": 1,
+          "contamination": 0.007577425329969951,
+          "phi": 0.007577,
+          "next_contamination": 0.007577,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.6499
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6499004582832214,
+        "ec_uniform": 0.8509258063751891,
+        "gain_pct": 23.624309732514078,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.08,
+          "precision": 0.4066,
+          "recall": 0.7688,
+          "f1": 0.5318,
+          "mcc": 0.5569,
+          "auprc": 0.5361,
+          "roc_auc": 0.9377,
+          "TP": 1649,
+          "FP": 2407,
+          "FN": 496,
+          "TN": 551167,
+          "raw_cost": 7367,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 2e-05,
+          "ece_out_of_sample_test": 0.00057
+        },
+        "Baseline SPW": {
+          "tau": 0.072,
+          "precision": 0.3751,
+          "recall": 0.7767,
+          "f1": 0.5059,
+          "mcc": 0.5374,
+          "auprc": 0.5445,
+          "roc_auc": 0.9914,
+          "TP": 1666,
+          "FP": 2775,
+          "FN": 479,
+          "TN": 550799,
+          "raw_cost": 7565,
+          "ece_out_of_sample_test": 0.00024
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.066,
+          "precision": 0.3406,
+          "recall": 0.7632,
+          "f1": 0.471,
+          "mcc": 0.5072,
+          "auprc": 0.5384,
+          "roc_auc": 0.9908,
+          "TP": 1637,
+          "FP": 3169,
+          "FN": 508,
+          "TN": 550405,
+          "raw_cost": 8249,
+          "ece_out_of_sample_test": 0.00041
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000786,
+          "cov_marginal": 0.9814,
+          "cov_fraud_class": 0.0014,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0029,
+          "ks_fraud": 0.0979,
+          "infl_bound_marginal": 0.0558,
+          "infl_bound_fraud": 0.2457,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9821,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000786,
+          "cov_marginal": 0.9814,
+          "cov_fraud_class": 0.0014,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0029,
+          "ks_fraud": 0.0979,
+          "infl_bound_marginal": 0.1058,
+          "infl_bound_fraud": 0.2957,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9821,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000786,
+          "cov_marginal": 0.9814,
+          "cov_fraud_class": 0.0014,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0029,
+          "ks_fraud": 0.0979,
+          "infl_bound_marginal": 0.2058,
+          "infl_bound_fraud": 0.3957,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9821,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.000786,
+          "n_approved": 555716,
+          "frauds_among_approved": 2142,
+          "lambda_pct": 0.385449,
+          "alert_volume_pct": 0.0005
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000786,
+          "n_approved": 555716,
+          "frauds_among_approved": 2142,
+          "lambda_pct": 0.385449,
+          "alert_volume_pct": 0.0005
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000786,
+          "n_approved": 555716,
+          "frauds_among_approved": 2142,
+          "lambda_pct": 0.385449,
+          "alert_volume_pct": 0.0005
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.08,
+          "precision": 0.4066,
+          "recall": 0.7688,
+          "f1": 0.5318,
+          "mcc": 0.5569,
+          "auprc": 0.5361,
+          "roc_auc": 0.9378,
+          "TP": 1649,
+          "FP": 2407,
+          "FN": 496,
+          "TN": 551167,
+          "raw_cost": 7367
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.082,
+          "precision": 0.3824,
+          "recall": 0.6984,
+          "f1": 0.4942,
+          "mcc": 0.5144,
+          "auprc": 0.532,
+          "roc_auc": 0.9373,
+          "TP": 1498,
+          "FP": 2419,
+          "FN": 647,
+          "TN": 551155,
+          "raw_cost": 8889
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.066,
+          "precision": 0.3698,
+          "recall": 0.7329,
+          "f1": 0.4916,
+          "mcc": 0.5181,
+          "auprc": 0.5413,
+          "roc_auc": 0.9907,
+          "TP": 1572,
+          "FP": 2679,
+          "FN": 573,
+          "TN": 550895,
+          "raw_cost": 8409
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.072,
+          "precision": 0.3751,
+          "recall": 0.7767,
+          "f1": 0.5059,
+          "mcc": 0.5374,
+          "auprc": 0.5445,
+          "roc_auc": 0.9914,
+          "TP": 1666,
+          "FP": 2775,
+          "FN": 479,
+          "TN": 550799,
+          "raw_cost": 7565,
+          "ece_out_of_sample_test": 0.00024
+        }
+      ],
+      "runtime_min": 27.7
+    },
+    {
+      "dataset": "K",
+      "seed": 49,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.007555,
+          "next_contamination": 0.007555,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.640341
+        },
+        {
+          "iter": 1,
+          "contamination": 0.007554990317890099,
+          "phi": 0.007555,
+          "next_contamination": 0.007555,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.640341
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6403407366608015,
+        "ec_uniform": 0.8459723520112399,
+        "gain_pct": 24.307131889306273,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.068,
+          "precision": 0.3582,
+          "recall": 0.8117,
+          "f1": 0.497,
+          "mcc": 0.5367,
+          "auprc": 0.5514,
+          "roc_auc": 0.9296,
+          "TP": 1741,
+          "FP": 3120,
+          "FN": 404,
+          "TN": 550454,
+          "raw_cost": 7160,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 2e-05,
+          "ece_out_of_sample_test": 0.00034
+        },
+        "Baseline SPW": {
+          "tau": 0.082,
+          "precision": 0.387,
+          "recall": 0.7716,
+          "f1": 0.5155,
+          "mcc": 0.5442,
+          "auprc": 0.5067,
+          "roc_auc": 0.9913,
+          "TP": 1655,
+          "FP": 2621,
+          "FN": 490,
+          "TN": 550953,
+          "raw_cost": 7521,
+          "ece_out_of_sample_test": 0.00021
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.068,
+          "precision": 0.358,
+          "recall": 0.7837,
+          "f1": 0.4914,
+          "mcc": 0.5272,
+          "auprc": 0.4195,
+          "roc_auc": 0.9901,
+          "TP": 1681,
+          "FP": 3015,
+          "FN": 464,
+          "TN": 550559,
+          "raw_cost": 7655,
+          "ece_out_of_sample_test": 2e-05
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000886,
+          "cov_marginal": 0.9825,
+          "cov_fraud_class": 0.0112,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0096,
+          "ks_fraud": 0.1429,
+          "infl_bound_marginal": 0.0692,
+          "infl_bound_fraud": 0.3359,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9831,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000886,
+          "cov_marginal": 0.9825,
+          "cov_fraud_class": 0.0112,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0096,
+          "ks_fraud": 0.1429,
+          "infl_bound_marginal": 0.1192,
+          "infl_bound_fraud": 0.3859,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9831,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000886,
+          "cov_marginal": 0.9825,
+          "cov_fraud_class": 0.0112,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0096,
+          "ks_fraud": 0.1429,
+          "infl_bound_marginal": 0.2192,
+          "infl_bound_fraud": 0.4859,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9831,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.000886,
+          "n_approved": 555695,
+          "frauds_among_approved": 2121,
+          "lambda_pct": 0.381684,
+          "alert_volume_pct": 0.0043
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000886,
+          "n_approved": 555695,
+          "frauds_among_approved": 2121,
+          "lambda_pct": 0.381684,
+          "alert_volume_pct": 0.0043
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000886,
+          "n_approved": 555695,
+          "frauds_among_approved": 2121,
+          "lambda_pct": 0.381684,
+          "alert_volume_pct": 0.0043
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.068,
+          "precision": 0.3582,
+          "recall": 0.8117,
+          "f1": 0.497,
+          "mcc": 0.5367,
+          "auprc": 0.5515,
+          "roc_auc": 0.9299,
+          "TP": 1741,
+          "FP": 3120,
+          "FN": 404,
+          "TN": 550454,
+          "raw_cost": 7160
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.084,
+          "precision": 0.3752,
+          "recall": 0.8042,
+          "f1": 0.5117,
+          "mcc": 0.547,
+          "auprc": 0.4597,
+          "roc_auc": 0.9335,
+          "TP": 1725,
+          "FP": 2872,
+          "FN": 420,
+          "TN": 550702,
+          "raw_cost": 7072
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.04,
+          "precision": 0.3345,
+          "recall": 0.7883,
+          "f1": 0.4697,
+          "mcc": 0.5109,
+          "auprc": 0.5471,
+          "roc_auc": 0.9913,
+          "TP": 1691,
+          "FP": 3365,
+          "FN": 454,
+          "TN": 550209,
+          "raw_cost": 7905
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.082,
+          "precision": 0.387,
+          "recall": 0.7716,
+          "f1": 0.5155,
+          "mcc": 0.5442,
+          "auprc": 0.5067,
+          "roc_auc": 0.9913,
+          "TP": 1655,
+          "FP": 2621,
+          "FN": 490,
+          "TN": 550953,
+          "raw_cost": 7521,
+          "ece_out_of_sample_test": 0.00021
+        }
+      ],
+      "runtime_min": 31.72
+    },
+    {
+      "dataset": "K",
+      "seed": 50,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.00792,
+          "next_contamination": 0.00792,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.664354
+        },
+        {
+          "iter": 1,
+          "contamination": 0.00791955926418769,
+          "phi": 0.00792,
+          "next_contamination": 0.00792,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.664354
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6643539705600849,
+        "ec_uniform": 0.8588946096169998,
+        "gain_pct": 22.65011759052311,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.06,
+          "precision": 0.3293,
+          "recall": 0.8126,
+          "f1": 0.4687,
+          "mcc": 0.5147,
+          "auprc": 0.5567,
+          "roc_auc": 0.9278,
+          "TP": 1743,
+          "FP": 3550,
+          "FN": 402,
+          "TN": 550024,
+          "raw_cost": 7570,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 1e-05,
+          "ece_out_of_sample_test": 0.00022
+        },
+        "Baseline SPW": {
+          "tau": 0.078,
+          "precision": 0.3615,
+          "recall": 0.7767,
+          "f1": 0.4933,
+          "mcc": 0.5274,
+          "auprc": 0.5219,
+          "roc_auc": 0.991,
+          "TP": 1666,
+          "FP": 2943,
+          "FN": 479,
+          "TN": 550631,
+          "raw_cost": 7733,
+          "ece_out_of_sample_test": 0.00029
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.088,
+          "precision": 0.3616,
+          "recall": 0.7641,
+          "f1": 0.4909,
+          "mcc": 0.5232,
+          "auprc": 0.5435,
+          "roc_auc": 0.9909,
+          "TP": 1639,
+          "FP": 2894,
+          "FN": 506,
+          "TN": 550680,
+          "raw_cost": 7954,
+          "ece_out_of_sample_test": 0.0002
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000936,
+          "cov_marginal": 0.9864,
+          "cov_fraud_class": 0.0,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0032,
+          "ks_fraud": 0.0788,
+          "infl_bound_marginal": 0.0565,
+          "infl_bound_fraud": 0.2075,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.987,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000936,
+          "cov_marginal": 0.9864,
+          "cov_fraud_class": 0.0,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0032,
+          "ks_fraud": 0.0788,
+          "infl_bound_marginal": 0.1065,
+          "infl_bound_fraud": 0.2575,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.987,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.000936,
+          "cov_marginal": 0.9864,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0032,
+          "ks_fraud": 0.0788,
+          "infl_bound_marginal": 0.2065,
+          "infl_bound_fraud": 0.3575,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.987,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.000936,
+          "n_approved": 555719,
+          "frauds_among_approved": 2145,
+          "lambda_pct": 0.385986,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.000936,
+          "n_approved": 555719,
+          "frauds_among_approved": 2145,
+          "lambda_pct": 0.385986,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.000936,
+          "n_approved": 555719,
+          "frauds_among_approved": 2145,
+          "lambda_pct": 0.385986,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.06,
+          "precision": 0.3293,
+          "recall": 0.8126,
+          "f1": 0.4687,
+          "mcc": 0.5147,
+          "auprc": 0.5567,
+          "roc_auc": 0.9281,
+          "TP": 1743,
+          "FP": 3550,
+          "FN": 402,
+          "TN": 550024,
+          "raw_cost": 7570
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.086,
+          "precision": 0.3447,
+          "recall": 0.8065,
+          "f1": 0.483,
+          "mcc": 0.5247,
+          "auprc": 0.5476,
+          "roc_auc": 0.9253,
+          "TP": 1730,
+          "FP": 3289,
+          "FN": 415,
+          "TN": 550285,
+          "raw_cost": 7439
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.084,
+          "precision": 0.3696,
+          "recall": 0.7706,
+          "f1": 0.4996,
+          "mcc": 0.5313,
+          "auprc": 0.5478,
+          "roc_auc": 0.9918,
+          "TP": 1653,
+          "FP": 2819,
+          "FN": 492,
+          "TN": 550755,
+          "raw_cost": 7739
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.078,
+          "precision": 0.3615,
+          "recall": 0.7767,
+          "f1": 0.4933,
+          "mcc": 0.5274,
+          "auprc": 0.5219,
+          "roc_auc": 0.991,
+          "TP": 1666,
+          "FP": 2943,
+          "FN": 479,
+          "TN": 550631,
+          "raw_cost": 7733,
+          "ece_out_of_sample_test": 0.00029
+        }
+      ],
+      "runtime_min": 29.31
+    },
+    {
+      "dataset": "K",
+      "seed": 51,
+      "splits": {
+        "train": {
+          "n": 713171,
+          "frauds": 4226
+        },
+        "val": {
+          "n": 194501,
+          "frauds": 895
+        },
+        "cal": {
+          "n": 194501,
+          "frauds": 1252
+        },
+        "test": {
+          "n": 555719,
+          "frauds": 2145
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.007873,
+          "next_contamination": 0.007873,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.633168
+        },
+        {
+          "iter": 1,
+          "contamination": 0.007873287051772997,
+          "phi": 0.007873,
+          "next_contamination": 0.007873,
+          "alpha": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "ec_star": 0.633168
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "ec_star": 0.6331683320607752,
+        "ec_uniform": 0.8474081071690714,
+        "gain_pct": 25.281770766154832,
+        "ec_var_across_starts": 1.232595164407831e-32
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.054,
+          "precision": 0.3095,
+          "recall": 0.8312,
+          "f1": 0.4511,
+          "mcc": 0.5045,
+          "auprc": 0.5378,
+          "roc_auc": 0.9468,
+          "TP": 1783,
+          "FP": 3977,
+          "FN": 362,
+          "TN": 549597,
+          "raw_cost": 7597,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 1e-05,
+          "ece_out_of_sample_test": 0.00037
+        },
+        "Baseline SPW": {
+          "tau": 0.078,
+          "precision": 0.3643,
+          "recall": 0.7697,
+          "f1": 0.4945,
+          "mcc": 0.5271,
+          "auprc": 0.4025,
+          "roc_auc": 0.9896,
+          "TP": 1651,
+          "FP": 2881,
+          "FN": 494,
+          "TN": 550693,
+          "raw_cost": 7821,
+          "ece_out_of_sample_test": 0.00034
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.048,
+          "precision": 0.278,
+          "recall": 0.8145,
+          "f1": 0.4145,
+          "mcc": 0.4728,
+          "auprc": 0.4992,
+          "roc_auc": 0.9903,
+          "TP": 1747,
+          "FP": 4537,
+          "FN": 398,
+          "TN": 549037,
+          "raw_cost": 8517,
+          "ece_out_of_sample_test": 0.00079
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001564,
+          "cov_marginal": 0.987,
+          "cov_fraud_class": 0.0326,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.003,
+          "ks_fraud": 0.0619,
+          "infl_bound_marginal": 0.0561,
+          "infl_bound_fraud": 0.1737,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9876,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.001564,
+          "cov_marginal": 0.987,
+          "cov_fraud_class": 0.0326,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.003,
+          "ks_fraud": 0.0619,
+          "infl_bound_marginal": 0.1061,
+          "infl_bound_fraud": 0.2237,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9876,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 194501,
+          "n_cal_fraud": 1252,
+          "q_hat": 0.00098,
+          "cov_marginal": 0.8305,
+          "cov_fraud_class": 0.0326,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.003,
+          "ks_fraud": 0.0619,
+          "infl_bound_marginal": 0.2061,
+          "infl_bound_fraud": 0.3237,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.8309,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 0.001564,
+          "n_approved": 555649,
+          "frauds_among_approved": 2075,
+          "lambda_pct": 0.373437,
+          "alert_volume_pct": 0.0126
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 0.001564,
+          "n_approved": 555649,
+          "frauds_among_approved": 2075,
+          "lambda_pct": 0.373437,
+          "alert_volume_pct": 0.0126
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 0.00098,
+          "n_approved": 555649,
+          "frauds_among_approved": 2075,
+          "lambda_pct": 0.373437,
+          "alert_volume_pct": 0.0126
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.054,
+          "precision": 0.3095,
+          "recall": 0.8312,
+          "f1": 0.4511,
+          "mcc": 0.5045,
+          "auprc": 0.5378,
+          "roc_auc": 0.9469,
+          "TP": 1783,
+          "FP": 3977,
+          "FN": 362,
+          "TN": 549597,
+          "raw_cost": 7597
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.046,
+          "precision": 0.3055,
+          "recall": 0.8312,
+          "f1": 0.4468,
+          "mcc": 0.5012,
+          "auprc": 0.5444,
+          "roc_auc": 0.9455,
+          "TP": 1783,
+          "FP": 4053,
+          "FN": 362,
+          "TN": 549521,
+          "raw_cost": 7673
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.084,
+          "precision": 0.2889,
+          "recall": 0.8149,
+          "f1": 0.4265,
+          "mcc": 0.4823,
+          "auprc": 0.4944,
+          "roc_auc": 0.9905,
+          "TP": 1748,
+          "FP": 4303,
+          "FN": 397,
+          "TN": 549271,
+          "raw_cost": 8273
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.078,
+          "precision": 0.3643,
+          "recall": 0.7697,
+          "f1": 0.4945,
+          "mcc": 0.5271,
+          "auprc": 0.4025,
+          "roc_auc": 0.9896,
+          "TP": 1651,
+          "FP": 2881,
+          "FN": 494,
+          "TN": 550693,
+          "raw_cost": 7821,
+          "ece_out_of_sample_test": 0.00034
+        }
+      ],
+      "runtime_min": 26.33
+    }
+  ],
+  "PS": [
+    {
+      "dataset": "PS",
+      "seed": 42,
+      "splits": {
+        "train": {
+          "n": 3499441,
+          "frauds": 2905
+        },
+        "val": {
+          "n": 954393,
+          "frauds": 738
+        },
+        "cal": {
+          "n": 954393,
+          "frauds": 562
+        },
+        "test": {
+          "n": 954393,
+          "frauds": 4008
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.000994,
+          "next_contamination": 0.001,
+          "alpha": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "ec_star": 0.480616
+        },
+        {
+          "iter": 1,
+          "contamination": 0.001,
+          "phi": 0.000994,
+          "next_contamination": 0.001,
+          "alpha": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "ec_star": 0.480616
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "ec_star": 0.48061605788066725,
+        "ec_uniform": 0.49673699997235715,
+        "gain_pct": 3.2453676880496154,
+        "ec_var_across_starts": 3.0814879110195774e-33
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.002,
+          "precision": 0.9435,
+          "recall": 0.9955,
+          "f1": 0.9688,
+          "mcc": 0.969,
+          "auprc": 0.989,
+          "roc_auc": 0.9998,
+          "TP": 3990,
+          "FP": 239,
+          "FN": 18,
+          "TN": 950146,
+          "raw_cost": 419,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.00049
+        },
+        "Baseline SPW": {
+          "tau": 0.068,
+          "precision": 0.9461,
+          "recall": 0.9978,
+          "f1": 0.9712,
+          "mcc": 0.9714,
+          "auprc": 0.9945,
+          "roc_auc": 0.9997,
+          "TP": 3999,
+          "FP": 228,
+          "FN": 9,
+          "TN": 950157,
+          "raw_cost": 318,
+          "ece_out_of_sample_test": 0.00033
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.078,
+          "precision": 0.9473,
+          "recall": 0.9965,
+          "f1": 0.9713,
+          "mcc": 0.9715,
+          "auprc": 0.9943,
+          "roc_auc": 0.9996,
+          "TP": 3994,
+          "FP": 222,
+          "FN": 14,
+          "TN": 950163,
+          "raw_cost": 362,
+          "ece_out_of_sample_test": 0.00034
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 1.5e-05,
+          "cov_marginal": 0.9984,
+          "cov_fraud_class": 0.6799,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0078,
+          "ks_fraud": 0.0328,
+          "infl_bound_marginal": 0.0656,
+          "infl_bound_fraud": 0.1156,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9984,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.919,
+          "cov_fraud_class": 0.0,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0078,
+          "ks_fraud": 0.0328,
+          "infl_bound_marginal": 0.1156,
+          "infl_bound_fraud": 0.1656,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.919,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.919,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0078,
+          "ks_fraud": 0.0328,
+          "infl_bound_marginal": 0.2156,
+          "infl_bound_fraud": 0.2656,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.919,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 1.5e-05,
+          "n_approved": 951664,
+          "frauds_among_approved": 1283,
+          "lambda_pct": 0.134816,
+          "alert_volume_pct": 0.2859
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 1e-06,
+          "n_approved": 954393,
+          "frauds_among_approved": 4008,
+          "lambda_pct": 0.419953,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 1e-06,
+          "n_approved": 954393,
+          "frauds_among_approved": 4008,
+          "lambda_pct": 0.419953,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "mondrian": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.641026,
+          "q_legit": 1.5e-05,
+          "cov_fraud_class": 0.9578,
+          "cov_legit_class": 0.9997,
+          "cov_marginal": 0.9996,
+          "fraud_ok": true,
+          "alert_volume_pct": 0.4146,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.391304,
+          "q_legit": 1e-06,
+          "cov_fraud_class": 0.8985,
+          "cov_legit_class": 0.9229,
+          "cov_marginal": 0.9228,
+          "fraud_ok": false,
+          "alert_volume_pct": 0.385,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.375,
+          "q_legit": 1e-06,
+          "cov_fraud_class": 0.8086,
+          "cov_legit_class": 0.9229,
+          "cov_marginal": 0.9224,
+          "fraud_ok": true,
+          "alert_volume_pct": 0.3435,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "tradeoff": [
+        {
+          "target_fraud_coverage": 0.5,
+          "achieved_fraud_coverage": 0.6799,
+          "alert_volume_pct": 0.2859,
+          "n_alerts": 2729,
+          "frauds_caught": 2725,
+          "lambda_approved_pct": 0.134816
+        },
+        {
+          "target_fraud_coverage": 0.55,
+          "achieved_fraud_coverage": 0.6799,
+          "alert_volume_pct": 0.2859,
+          "n_alerts": 2729,
+          "frauds_caught": 2725,
+          "lambda_approved_pct": 0.134816
+        },
+        {
+          "target_fraud_coverage": 0.6,
+          "achieved_fraud_coverage": 0.6799,
+          "alert_volume_pct": 0.2859,
+          "n_alerts": 2729,
+          "frauds_caught": 2725,
+          "lambda_approved_pct": 0.134816
+        },
+        {
+          "target_fraud_coverage": 0.65,
+          "achieved_fraud_coverage": 0.6799,
+          "alert_volume_pct": 0.2859,
+          "n_alerts": 2729,
+          "frauds_caught": 2725,
+          "lambda_approved_pct": 0.134816
+        },
+        {
+          "target_fraud_coverage": 0.7,
+          "achieved_fraud_coverage": 0.7098,
+          "alert_volume_pct": 0.2987,
+          "n_alerts": 2851,
+          "frauds_caught": 2845,
+          "lambda_approved_pct": 0.122223
+        },
+        {
+          "target_fraud_coverage": 0.75,
+          "achieved_fraud_coverage": 0.7493,
+          "alert_volume_pct": 0.3165,
+          "n_alerts": 3021,
+          "frauds_caught": 3003,
+          "lambda_approved_pct": 0.105637
+        },
+        {
+          "target_fraud_coverage": 0.8,
+          "achieved_fraud_coverage": 0.8086,
+          "alert_volume_pct": 0.3435,
+          "n_alerts": 3278,
+          "frauds_caught": 3241,
+          "lambda_approved_pct": 0.080642
+        },
+        {
+          "target_fraud_coverage": 0.85,
+          "achieved_fraud_coverage": 0.8558,
+          "alert_volume_pct": 0.3657,
+          "n_alerts": 3490,
+          "frauds_caught": 3430,
+          "lambda_approved_pct": 0.060784
+        },
+        {
+          "target_fraud_coverage": 0.9,
+          "achieved_fraud_coverage": 0.8985,
+          "alert_volume_pct": 0.385,
+          "n_alerts": 3674,
+          "frauds_caught": 3601,
+          "lambda_approved_pct": 0.04281
+        },
+        {
+          "target_fraud_coverage": 0.95,
+          "achieved_fraud_coverage": 0.9578,
+          "alert_volume_pct": 0.4146,
+          "n_alerts": 3957,
+          "frauds_caught": 3839,
+          "lambda_approved_pct": 0.017781
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.002,
+          "precision": 0.9435,
+          "recall": 0.9955,
+          "f1": 0.9688,
+          "mcc": 0.969,
+          "auprc": 0.989,
+          "roc_auc": 0.9997,
+          "TP": 3990,
+          "FP": 239,
+          "FN": 18,
+          "TN": 950146,
+          "raw_cost": 419
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.002,
+          "precision": 0.9435,
+          "recall": 0.9955,
+          "f1": 0.9688,
+          "mcc": 0.969,
+          "auprc": 0.9886,
+          "roc_auc": 0.9988,
+          "TP": 3990,
+          "FP": 239,
+          "FN": 18,
+          "TN": 950146,
+          "raw_cost": 419
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.086,
+          "precision": 0.9602,
+          "recall": 0.982,
+          "f1": 0.971,
+          "mcc": 0.971,
+          "auprc": 0.9941,
+          "roc_auc": 0.9996,
+          "TP": 3936,
+          "FP": 163,
+          "FN": 72,
+          "TN": 950222,
+          "raw_cost": 883
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.068,
+          "precision": 0.9461,
+          "recall": 0.9978,
+          "f1": 0.9712,
+          "mcc": 0.9714,
+          "auprc": 0.9945,
+          "roc_auc": 0.9997,
+          "TP": 3999,
+          "FP": 228,
+          "FN": 9,
+          "TN": 950157,
+          "raw_cost": 318,
+          "ece_out_of_sample_test": 0.00033
+        }
+      ],
+      "runtime_min": 171.24
+    },
+    {
+      "dataset": "PS",
+      "seed": 43,
+      "splits": {
+        "train": {
+          "n": 3499441,
+          "frauds": 2905
+        },
+        "val": {
+          "n": 954393,
+          "frauds": 738
+        },
+        "cal": {
+          "n": 954393,
+          "frauds": 562
+        },
+        "test": {
+          "n": 954393,
+          "frauds": 4008
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.000995,
+          "next_contamination": 0.001,
+          "alpha": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "ec_star": 0.488982
+        },
+        {
+          "iter": 1,
+          "contamination": 0.001,
+          "phi": 0.000995,
+          "next_contamination": 0.001,
+          "alpha": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "ec_star": 0.488982
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "ec_star": 0.48898237812304396,
+        "ec_uniform": 0.49949278610032904,
+        "gain_pct": 2.1042161708365383,
+        "ec_var_across_starts": 3.0814879110195774e-33
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.088,
+          "precision": 0.952,
+          "recall": 0.989,
+          "f1": 0.9701,
+          "mcc": 0.9702,
+          "auprc": 0.9879,
+          "roc_auc": 0.9994,
+          "TP": 3964,
+          "FP": 200,
+          "FN": 44,
+          "TN": 950185,
+          "raw_cost": 640,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.0005
+        },
+        "Baseline SPW": {
+          "tau": 0.084,
+          "precision": 0.9604,
+          "recall": 0.9853,
+          "f1": 0.9727,
+          "mcc": 0.9726,
+          "auprc": 0.9937,
+          "roc_auc": 0.9998,
+          "TP": 3949,
+          "FP": 163,
+          "FN": 59,
+          "TN": 950222,
+          "raw_cost": 753,
+          "ece_out_of_sample_test": 0.00033
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.002,
+          "precision": 0.9443,
+          "recall": 0.999,
+          "f1": 0.9709,
+          "mcc": 0.9712,
+          "auprc": 0.9939,
+          "roc_auc": 0.9996,
+          "TP": 4004,
+          "FP": 236,
+          "FN": 4,
+          "TN": 950149,
+          "raw_cost": 276,
+          "ece_out_of_sample_test": 0.00034
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 4e-06,
+          "cov_marginal": 0.9984,
+          "cov_fraud_class": 0.6749,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0102,
+          "ks_fraud": 0.0151,
+          "infl_bound_marginal": 0.0705,
+          "infl_bound_fraud": 0.0803,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9984,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 4e-06,
+          "cov_marginal": 0.9984,
+          "cov_fraud_class": 0.6749,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0102,
+          "ks_fraud": 0.0151,
+          "infl_bound_marginal": 0.1205,
+          "infl_bound_fraud": 0.1303,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9984,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 4e-06,
+          "cov_marginal": 0.9984,
+          "cov_fraud_class": 0.6749,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.0102,
+          "ks_fraud": 0.0151,
+          "infl_bound_marginal": 0.2205,
+          "infl_bound_fraud": 0.2303,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9984,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 4e-06,
+          "n_approved": 951684,
+          "frauds_among_approved": 1303,
+          "lambda_pct": 0.136915,
+          "alert_volume_pct": 0.2838
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 4e-06,
+          "n_approved": 951684,
+          "frauds_among_approved": 1303,
+          "lambda_pct": 0.136915,
+          "alert_volume_pct": 0.2838
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 4e-06,
+          "n_approved": 951684,
+          "frauds_among_approved": 1303,
+          "lambda_pct": 0.136915,
+          "alert_volume_pct": 0.2838
+        }
+      ],
+      "mondrian": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.592593,
+          "q_legit": 4e-06,
+          "cov_fraud_class": 0.9601,
+          "cov_legit_class": 0.9997,
+          "cov_marginal": 0.9996,
+          "fraud_ok": true,
+          "alert_volume_pct": 0.4163,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.532468,
+          "q_legit": 4e-06,
+          "cov_fraud_class": 0.9309,
+          "cov_legit_class": 0.9997,
+          "cov_marginal": 0.9995,
+          "fraud_ok": true,
+          "alert_volume_pct": 0.4011,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.343284,
+          "q_legit": 4e-06,
+          "cov_fraud_class": 0.8738,
+          "cov_legit_class": 0.9997,
+          "cov_marginal": 0.9992,
+          "fraud_ok": true,
+          "alert_volume_pct": 0.3745,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "tradeoff": [
+        {
+          "target_fraud_coverage": 0.5,
+          "achieved_fraud_coverage": 0.6749,
+          "alert_volume_pct": 0.2838,
+          "n_alerts": 2709,
+          "frauds_caught": 2705,
+          "lambda_approved_pct": 0.136915
+        },
+        {
+          "target_fraud_coverage": 0.55,
+          "achieved_fraud_coverage": 0.6749,
+          "alert_volume_pct": 0.2838,
+          "n_alerts": 2709,
+          "frauds_caught": 2705,
+          "lambda_approved_pct": 0.136915
+        },
+        {
+          "target_fraud_coverage": 0.6,
+          "achieved_fraud_coverage": 0.6749,
+          "alert_volume_pct": 0.2838,
+          "n_alerts": 2709,
+          "frauds_caught": 2705,
+          "lambda_approved_pct": 0.136915
+        },
+        {
+          "target_fraud_coverage": 0.65,
+          "achieved_fraud_coverage": 0.6749,
+          "alert_volume_pct": 0.2838,
+          "n_alerts": 2709,
+          "frauds_caught": 2705,
+          "lambda_approved_pct": 0.136915
+        },
+        {
+          "target_fraud_coverage": 0.7,
+          "achieved_fraud_coverage": 0.7123,
+          "alert_volume_pct": 0.3001,
+          "n_alerts": 2864,
+          "frauds_caught": 2855,
+          "lambda_approved_pct": 0.121173
+        },
+        {
+          "target_fraud_coverage": 0.75,
+          "achieved_fraud_coverage": 0.8738,
+          "alert_volume_pct": 0.3745,
+          "n_alerts": 3574,
+          "frauds_caught": 3502,
+          "lambda_approved_pct": 0.053217
+        },
+        {
+          "target_fraud_coverage": 0.8,
+          "achieved_fraud_coverage": 0.8738,
+          "alert_volume_pct": 0.3745,
+          "n_alerts": 3574,
+          "frauds_caught": 3502,
+          "lambda_approved_pct": 0.053217
+        },
+        {
+          "target_fraud_coverage": 0.85,
+          "achieved_fraud_coverage": 0.8738,
+          "alert_volume_pct": 0.3745,
+          "n_alerts": 3574,
+          "frauds_caught": 3502,
+          "lambda_approved_pct": 0.053217
+        },
+        {
+          "target_fraud_coverage": 0.9,
+          "achieved_fraud_coverage": 0.9309,
+          "alert_volume_pct": 0.4011,
+          "n_alerts": 3828,
+          "frauds_caught": 3731,
+          "lambda_approved_pct": 0.029141
+        },
+        {
+          "target_fraud_coverage": 0.95,
+          "achieved_fraud_coverage": 0.9601,
+          "alert_volume_pct": 0.4163,
+          "n_alerts": 3973,
+          "frauds_caught": 3848,
+          "lambda_approved_pct": 0.016835
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.088,
+          "precision": 0.952,
+          "recall": 0.989,
+          "f1": 0.9701,
+          "mcc": 0.9702,
+          "auprc": 0.9878,
+          "roc_auc": 0.9994,
+          "TP": 3964,
+          "FP": 200,
+          "FN": 44,
+          "TN": 950185,
+          "raw_cost": 640
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.064,
+          "precision": 0.95,
+          "recall": 0.9963,
+          "f1": 0.9726,
+          "mcc": 0.9728,
+          "auprc": 0.9918,
+          "roc_auc": 0.9998,
+          "TP": 3993,
+          "FP": 210,
+          "FN": 15,
+          "TN": 950175,
+          "raw_cost": 360
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.002,
+          "precision": 0.9446,
+          "recall": 0.999,
+          "f1": 0.971,
+          "mcc": 0.9713,
+          "auprc": 0.9943,
+          "roc_auc": 0.9996,
+          "TP": 4004,
+          "FP": 235,
+          "FN": 4,
+          "TN": 950150,
+          "raw_cost": 275
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.084,
+          "precision": 0.9604,
+          "recall": 0.9853,
+          "f1": 0.9727,
+          "mcc": 0.9726,
+          "auprc": 0.9937,
+          "roc_auc": 0.9998,
+          "TP": 3949,
+          "FP": 163,
+          "FN": 59,
+          "TN": 950222,
+          "raw_cost": 753,
+          "ece_out_of_sample_test": 0.00033
+        }
+      ],
+      "runtime_min": 177.33
+    },
+    {
+      "dataset": "PS",
+      "seed": 44,
+      "splits": {
+        "train": {
+          "n": 3499441,
+          "frauds": 2905
+        },
+        "val": {
+          "n": 954393,
+          "frauds": 738
+        },
+        "cal": {
+          "n": 954393,
+          "frauds": 562
+        },
+        "test": {
+          "n": 954393,
+          "frauds": 4008
+        }
+      },
+      "semisync": [
+        {
+          "iter": 0,
+          "contamination": 0.002,
+          "phi": 0.000994,
+          "next_contamination": 0.001,
+          "alpha": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "ec_star": 0.480496
+        },
+        {
+          "iter": 1,
+          "contamination": 0.001,
+          "phi": 0.000994,
+          "next_contamination": 0.001,
+          "alpha": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "ec_star": 0.480496
+        }
+      ],
+      "semisync_monotone": true,
+      "gate": {
+        "alpha": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "ec_star": 0.4804957190911551,
+        "ec_uniform": 0.4923636161458844,
+        "gain_pct": 2.410392779959782,
+        "ec_var_across_starts": 0.0
+      },
+      "models": {
+        "ADAPTIVE-CP-FRAUD": {
+          "tau": 0.002,
+          "precision": 0.9437,
+          "recall": 0.9948,
+          "f1": 0.9685,
+          "mcc": 0.9687,
+          "auprc": 0.9886,
+          "roc_auc": 0.9998,
+          "TP": 3987,
+          "FP": 238,
+          "FN": 21,
+          "TN": 950147,
+          "raw_cost": 448,
+          "calibrator": "isotonic",
+          "ece_in_sample_val": 0.0,
+          "ece_out_of_sample_test": 0.0005
+        },
+        "Baseline SPW": {
+          "tau": 0.072,
+          "precision": 0.9476,
+          "recall": 0.9968,
+          "f1": 0.9715,
+          "mcc": 0.9717,
+          "auprc": 0.9943,
+          "roc_auc": 0.9998,
+          "TP": 3995,
+          "FP": 221,
+          "FN": 13,
+          "TN": 950164,
+          "raw_cost": 351,
+          "ece_out_of_sample_test": 0.0004
+        },
+        "HybridMeta-XGB": {
+          "tau": 0.014,
+          "precision": 0.9416,
+          "recall": 0.9985,
+          "f1": 0.9692,
+          "mcc": 0.9695,
+          "auprc": 0.9942,
+          "roc_auc": 0.9998,
+          "TP": 4002,
+          "FP": 248,
+          "FN": 6,
+          "TN": 950137,
+          "raw_cost": 308,
+          "ece_out_of_sample_test": 0.00041
+        }
+      },
+      "conformal": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.9672,
+          "cov_fraud_class": 0.0,
+          "target": 0.95,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.006,
+          "ks_fraud": 0.0281,
+          "infl_bound_marginal": 0.062,
+          "infl_bound_fraud": 0.1063,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9672,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.9672,
+          "cov_fraud_class": 0.0,
+          "target": 0.9,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.006,
+          "ks_fraud": 0.0281,
+          "infl_bound_marginal": 0.112,
+          "infl_bound_fraud": 0.1563,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9672,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal": 954393,
+          "n_cal_fraud": 562,
+          "q_hat": 1e-06,
+          "cov_marginal": 0.9672,
+          "cov_fraud_class": 0.0,
+          "target": 0.8,
+          "marginal_ok": true,
+          "fraud_ok": false,
+          "ks_marginal": 0.006,
+          "ks_fraud": 0.0281,
+          "infl_bound_marginal": 0.212,
+          "infl_bound_fraud": 0.2563,
+          "infl_is_vacuous": false,
+          "singleton_frac": 0.9672,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "psd2": [
+        {
+          "alpha_sig": 0.05,
+          "q_hat": 1e-06,
+          "n_approved": 954393,
+          "frauds_among_approved": 4008,
+          "lambda_pct": 0.419953,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "q_hat": 1e-06,
+          "n_approved": 954393,
+          "frauds_among_approved": 4008,
+          "lambda_pct": 0.419953,
+          "alert_volume_pct": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "q_hat": 1e-06,
+          "n_approved": 954393,
+          "frauds_among_approved": 4008,
+          "lambda_pct": 0.419953,
+          "alert_volume_pct": 0.0
+        }
+      ],
+      "mondrian": [
+        {
+          "alpha_sig": 0.05,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.555556,
+          "q_legit": 1e-06,
+          "cov_fraud_class": 0.9533,
+          "cov_legit_class": 0.9713,
+          "cov_marginal": 0.9712,
+          "fraud_ok": true,
+          "alert_volume_pct": 0.4122,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.1,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.445545,
+          "q_legit": 1e-06,
+          "cov_fraud_class": 0.9149,
+          "cov_legit_class": 0.9713,
+          "cov_marginal": 0.9711,
+          "fraud_ok": true,
+          "alert_volume_pct": 0.3941,
+          "ambiguous_frac": 0.0
+        },
+        {
+          "alpha_sig": 0.2,
+          "n_cal_fraud": 562,
+          "q_fraud": 0.3,
+          "q_legit": 1e-06,
+          "cov_fraud_class": 0.7919,
+          "cov_legit_class": 0.9713,
+          "cov_marginal": 0.9706,
+          "fraud_ok": false,
+          "alert_volume_pct": 0.3365,
+          "ambiguous_frac": 0.0
+        }
+      ],
+      "tradeoff": [
+        {
+          "target_fraud_coverage": 0.5,
+          "achieved_fraud_coverage": 0.6644,
+          "alert_volume_pct": 0.2791,
+          "n_alerts": 2664,
+          "frauds_caught": 2663,
+          "lambda_approved_pct": 0.141322
+        },
+        {
+          "target_fraud_coverage": 0.55,
+          "achieved_fraud_coverage": 0.6644,
+          "alert_volume_pct": 0.2791,
+          "n_alerts": 2664,
+          "frauds_caught": 2663,
+          "lambda_approved_pct": 0.141322
+        },
+        {
+          "target_fraud_coverage": 0.6,
+          "achieved_fraud_coverage": 0.6644,
+          "alert_volume_pct": 0.2791,
+          "n_alerts": 2664,
+          "frauds_caught": 2663,
+          "lambda_approved_pct": 0.141322
+        },
+        {
+          "target_fraud_coverage": 0.65,
+          "achieved_fraud_coverage": 0.6816,
+          "alert_volume_pct": 0.2868,
+          "n_alerts": 2737,
+          "frauds_caught": 2732,
+          "lambda_approved_pct": 0.134082
+        },
+        {
+          "target_fraud_coverage": 0.7,
+          "achieved_fraud_coverage": 0.7236,
+          "alert_volume_pct": 0.3056,
+          "n_alerts": 2917,
+          "frauds_caught": 2900,
+          "lambda_approved_pct": 0.116451
+        },
+        {
+          "target_fraud_coverage": 0.75,
+          "achieved_fraud_coverage": 0.7919,
+          "alert_volume_pct": 0.3365,
+          "n_alerts": 3212,
+          "frauds_caught": 3174,
+          "lambda_approved_pct": 0.08768
+        },
+        {
+          "target_fraud_coverage": 0.8,
+          "achieved_fraud_coverage": 0.7919,
+          "alert_volume_pct": 0.3365,
+          "n_alerts": 3212,
+          "frauds_caught": 3174,
+          "lambda_approved_pct": 0.08768
+        },
+        {
+          "target_fraud_coverage": 0.85,
+          "achieved_fraud_coverage": 0.8331,
+          "alert_volume_pct": 0.3556,
+          "n_alerts": 3394,
+          "frauds_caught": 3339,
+          "lambda_approved_pct": 0.070347
+        },
+        {
+          "target_fraud_coverage": 0.9,
+          "achieved_fraud_coverage": 0.9149,
+          "alert_volume_pct": 0.3941,
+          "n_alerts": 3761,
+          "frauds_caught": 3667,
+          "lambda_approved_pct": 0.035871
+        },
+        {
+          "target_fraud_coverage": 0.95,
+          "achieved_fraud_coverage": 0.9533,
+          "alert_volume_pct": 0.4122,
+          "n_alerts": 3934,
+          "frauds_caught": 3821,
+          "lambda_approved_pct": 0.019675
+        }
+      ],
+      "ablation": [
+        {
+          "config": "full",
+          "tau": 0.002,
+          "precision": 0.9437,
+          "recall": 0.9948,
+          "f1": 0.9685,
+          "mcc": 0.9687,
+          "auprc": 0.9886,
+          "roc_auc": 0.9998,
+          "TP": 3987,
+          "FP": 238,
+          "FN": 21,
+          "TN": 950147,
+          "raw_cost": 448
+        },
+        {
+          "config": "no_stage1_uniform",
+          "tau": 0.002,
+          "precision": 0.9435,
+          "recall": 0.9953,
+          "f1": 0.9687,
+          "mcc": 0.9689,
+          "auprc": 0.9889,
+          "roc_auc": 0.9998,
+          "TP": 3989,
+          "FP": 239,
+          "FN": 19,
+          "TN": 950146,
+          "raw_cost": 429
+        },
+        {
+          "config": "no_stage2_spw",
+          "tau": 0.068,
+          "precision": 0.9635,
+          "recall": 0.976,
+          "f1": 0.9698,
+          "mcc": 0.9696,
+          "auprc": 0.9939,
+          "roc_auc": 0.9998,
+          "TP": 3912,
+          "FP": 148,
+          "FN": 96,
+          "TN": 950237,
+          "raw_cost": 1108
+        },
+        {
+          "config": "baseline_no_anomaly",
+          "tau": 0.072,
+          "precision": 0.9476,
+          "recall": 0.9968,
+          "f1": 0.9715,
+          "mcc": 0.9717,
+          "auprc": 0.9943,
+          "roc_auc": 0.9998,
+          "TP": 3995,
+          "FP": 221,
+          "FN": 13,
+          "TN": 950164,
+          "raw_cost": 351,
+          "ece_out_of_sample_test": 0.0004
+        }
+      ],
+      "runtime_min": 221.6
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: >-
+  Code and results for "Quantifying the Alert-Volume Cost of Class-Conditional Conformal Guarantees for Card Fraud Detection Under PSD2"
+message: If you use this software or its results, please cite it.
+type: software
+authors:
+  - family-names: Elbadraoui
+    given-names: Abdellatif
+    email: elbadraoui.abdellatif@uit.ac.ma
+    affiliation: >-
+      Engineering Sciences Laboratory, Ibn Tofail University,
+      Kenitra, Morocco
+    # orcid: 'https://orcid.org/0000-0000-0000-0000'   # À COMPLÉTER
+  - family-names: Mouhssine
+    given-names: Yassine
+    affiliation: >-
+      LAMSAD Laboratory, Hassan First University, Settat, Morocco
+  - family-names: El Alaoui
+    given-names: Abdelkader
+    affiliation: >-
+      Rabat Business School, International University of Rabat,
+      Rabat, Morocco
+  - family-names: Ouatik El Alaoui
+    given-names: Said
+    affiliation: >-
+      Engineering Sciences Laboratory, Ibn Tofail University,
+      Kenitra, Morocco
+repository-code: 'https://github.com/[USER]/conformal-fraud-price'   # À COMPLÉTER
+license: MIT
+version: 1.0.0
+date-released: '2026-08-07'
+keywords:
+  - conformal prediction
+  - class-conditional coverage
+  - credit card fraud detection
+  - cost-sensitive learning
+  - PSD2

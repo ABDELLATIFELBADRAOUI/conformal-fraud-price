@@ -1,0 +1,5 @@
+dataset,split,n,frauds,rate_pct
+K,train,713171,4226,0.5926
+K,val,194501,895,0.4602
+K,cal,194501,1252,0.6437
+K,test,555719,2145,0.386

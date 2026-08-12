@@ -1,0 +1,13 @@
+# Versions of the environment that produced the paper's results.
+# numpy / pandas / xgboost are confirmed from the notebook run log.
+numpy==2.4.2
+pandas==3.0.1
+xgboost==3.2.0
+# BEFORE PUBLISHING: pin the three below from the SAME machine:
+#   pip freeze | grep -iE "scikit-learn|scipy|matplotlib"
+scikit-learn
+scipy
+matplotlib
+tabulate
+jupyter
+# Bit-exact reproduction additionally requires N_JOBS = 1 (see README).
