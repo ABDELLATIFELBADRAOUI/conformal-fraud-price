@@ -1,78 +1,65 @@
-# Avant de déposer — liste de contrôle
+# Release checklist
 
-## 1. Résultats — déjà inclus dans ce paquet
+This package is already published. What follows is what was checked, and what
+to redo on the next release.
 
-Les 13 `.npz`, les tables `paper_*` + `table02_*`, `all_results.json`,
-`PAPER_RESULTS.md` et les quatre figures sont en place et vérifiés : chaque
-cellule du Tableau 3 du papier a été recalculée depuis les `.npz` et coïncide.
+## 1. Verify the released results
 
 ```bash
 sha256sum -c SHA256SUMS.txt
+pip install numpy pandas scipy matplotlib
+python src/pipeline.py reproduce
+git status --short          # must come back clean
 ```
 
-## 2. Compléter les champs marqués
+`reproduce` rewrites `results/tables/paper_{A,C,D,E,wilcoxon}.csv` and the four
+figures from `results/scores/*.npz`. A clean `git status` afterwards is the
+check that the committed results and the code that produced them agree.
 
-| Fichier | À remplir |
-|---|---|
-| `CITATION.cff` | `repository-code`, et les ORCID si vous en avez |
-| `data/README.md` | les quatre SHA-256 |
-| le manuscrit | le jeton `[TO COMPLETE: repository URL]` dans Data Availability |
+## 2. Verify no dataset leaked into the repository
 
-## 2bis. Figer l'environnement
+```bash
+du -sh data/          # README.md only
+git log --stat -- data/
+```
 
-Sur la machine qui a produit les résultats :
+`.gitignore` excludes the CSVs, but check before every push: a file added by
+mistake stays in the history after deletion, and that is a Kaggle licensing
+problem, not a tidiness one.
+
+## 3. Environment
+
+`requirements.txt` pins numpy, pandas and xgboost to the versions confirmed in
+the notebook's run log. scikit-learn, scipy and matplotlib were not recorded at
+run time and are given as floors, not as invented pins. If you re-run the
+training path, capture the real versions:
 
 ```bash
 pip freeze | grep -iE "scikit-learn|scipy|matplotlib"
 ```
 
-et reporter les trois versions dans `requirements.txt` (numpy, pandas et
-xgboost y sont déjà, confirmés par le journal d'exécution du notebook).
+## 4. GitHub
 
-## 3. Vérifier qu'aucune donnée n'est incluse
+The repository lives at
+<https://github.com/ABDELLATIFELBADRAOUI/conformal-fraud-price>. The journal
+review is single anonymized, so the repository is public under the authors'
+own account and the URL appears directly in the manuscript's Data Availability
+statement.
 
-```bash
-git status --short
-du -sh data/
-```
+`.gitignore` and `.zenodo.json` are part of the package; a web-upload that
+skips dotfiles will drop them.
 
-`data/` ne doit contenir que `README.md`. Le `.gitignore` exclut les CSV, mais
-vérifiez avant le premier commit : un fichier ajouté par erreur reste dans
-l'historique même après suppression, et c'est alors un problème de licence
-Kaggle.
+## 5. Zenodo
 
-## 4. Vérifier que le notebook tourne depuis les scores seuls
+1. Connect the GitHub account on zenodo.org and enable this repository.
+2. Cut a GitHub release — Zenodo archives it and mints a DOI.
+3. Put the DOI in `CITATION.cff` and in the manuscript's Data Availability
+   section. The DOI is permanent where a GitHub URL is not.
 
-Avant de publier, redémarrez le noyau et exécutez uniquement les cellules 1, 2,
-puis 12, 13 et 14. Elles ne lisent que les `.npz`. Si elles produisent
-`PAPER_RESULTS.md` et les quatre figures sans toucher aux données brutes, la
-promesse du README tient.
+`.zenodo.json` supplies the title, description, licence, keywords and the four
+ORCIDs, so the Zenodo record needs no manual editing.
 
-## 5. GitHub
+## 6. After acceptance
 
-```bash
-git init
-git add .
-git commit -m "Reproduction package for the conformal coverage price paper"
-git branch -M main
-git remote add origin https://github.com/[USER]/conformal-fraud-price.git
-git push -u origin main
-```
-
-**IEEE Access est en simple aveugle** : poussez sous votre propre compte et
-mettez l'URL réelle directement dans le manuscrit (Data Availability) et dans
-`CITATION.cff` (`repository-code`).
-
-## 6. Zenodo
-
-1. Connecter le compte GitHub sur zenodo.org, activer le dépôt.
-2. Créer une release GitHub `v1.0.0` — Zenodo l'archive et émet un DOI.
-3. Ajouter le DOI dans `CITATION.cff` et dans la section Data Availability.
-
-Le DOI Zenodo est permanent là où une URL GitHub peut disparaître ; ajoutez-le
-aussi dans la section Data Availability du manuscrit.
-
-## 7. Après acceptation
-
-Ajouter la référence du papier (DOI IEEE) dans `CITATION.cff` sous
-`preferred-citation`.
+Add the article's DOI to `CITATION.cff` under `preferred-citation`, and bump
+`version` and `date-released`.

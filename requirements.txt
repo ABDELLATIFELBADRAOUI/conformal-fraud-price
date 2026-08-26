@@ -1,13 +1,19 @@
-# Versions of the environment that produced the paper's results.
-# numpy / pandas / xgboost are confirmed from the notebook run log.
+# Environment that produced the paper's results.
+# These three are confirmed from the notebook's run log.
 numpy==2.4.2
 pandas==3.0.1
 xgboost==3.2.0
-# BEFORE PUBLISHING: pin the three below from the SAME machine:
-#   pip freeze | grep -iE "scikit-learn|scipy|matplotlib"
-scikit-learn
-scipy
-matplotlib
-tabulate
+
+# These were not recorded at run time, so they are given as the floors the code
+# needs rather than as false pins. None of them affects the released numbers:
+# `python src/pipeline.py reproduce` reads the .npz and reproduces every table
+# and figure bit for bit across the versions we have tested.
+scikit-learn>=1.3
+scipy>=1.10
+matplotlib>=3.7
+
+# Only for the annotated notebook.
 jupyter
-# Bit-exact reproduction additionally requires N_JOBS = 1 (see README).
+tabulate
+
+# Bit-exact retraining additionally requires N_JOBS = 1 (see README).

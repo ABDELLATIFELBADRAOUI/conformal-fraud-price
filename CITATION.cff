@@ -1,36 +1,42 @@
 cff-version: 1.2.0
 title: >-
-  Code and results for "Quantifying the Alert-Volume Cost of Class-Conditional Conformal Guarantees for Card Fraud Detection Under PSD2"
+  Code and results for "Quantifying the Empirical Alert-Volume Cost of
+  Class-Conditional Conformal Prediction for Card Fraud Detection Under
+  the Revised EU Payment Services Directive"
 message: If you use this software or its results, please cite it.
 type: software
 authors:
   - family-names: Elbadraoui
     given-names: Abdellatif
     email: elbadraoui.abdellatif@uit.ac.ma
+    orcid: 'https://orcid.org/0009-0008-1779-7980'
     affiliation: >-
       Engineering Sciences Laboratory, Ibn Tofail University,
       Kenitra, Morocco
-    # orcid: 'https://orcid.org/0000-0000-0000-0000'   # À COMPLÉTER
   - family-names: Mouhssine
     given-names: Yassine
+    orcid: 'https://orcid.org/0009-0002-2502-0414'
     affiliation: >-
       LAMSAD Laboratory, Hassan First University, Settat, Morocco
   - family-names: El Alaoui
     given-names: Abdelkader
+    orcid: 'https://orcid.org/0000-0002-5004-0807'
     affiliation: >-
       Rabat Business School, International University of Rabat,
       Rabat, Morocco
   - family-names: Ouatik El Alaoui
     given-names: Said
+    orcid: 'https://orcid.org/0000-0003-1194-0578'
     affiliation: >-
       Engineering Sciences Laboratory, Ibn Tofail University,
       Kenitra, Morocco
-repository-code: 'https://github.com/[USER]/conformal-fraud-price'   # À COMPLÉTER
+repository-code: 'https://github.com/ABDELLATIFELBADRAOUI/conformal-fraud-price'
 license: MIT
-version: 1.0.0
-date-released: '2026-08-07'
+version: 1.0.1
+date-released: '2026-08-26'
 keywords:
   - conformal prediction
+  - Mondrian conformal prediction
   - class-conditional coverage
   - credit card fraud detection
   - cost-sensitive learning
