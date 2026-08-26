@@ -1,0 +1,10 @@
+dataset,comparison,p,p_holm,r,cheaper
+ULB,Cost-sens. vs Baseline,0.826,0.826,-0.09,5/10
+ULB,Cost-sens. vs Hybrid,0.002,0.006,1.0,0/10
+ULB,Baseline vs Hybrid,0.008,0.016,0.96,1/10
+Sparkov,Cost-sens. vs Baseline,0.01,0.02,-0.89,8/10
+Sparkov,Cost-sens. vs Hybrid,0.006,0.018,-0.93,9/10
+Sparkov,Baseline vs Hybrid,0.049,0.049,-0.71,8/10
+PaySim,Cost-sens. vs Baseline,1.0,1.0,0.0,1/3
+PaySim,Cost-sens. vs Hybrid,0.25,0.75,1.0,0/3
+PaySim,Baseline vs Hybrid,0.75,1.0,0.33,1/3
