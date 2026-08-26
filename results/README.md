@@ -1,33 +1,51 @@
 # Results
 
-Everything here is produced by the notebook. Nothing is hand-edited.
+Everything here is produced by `src/pipeline.py`. Nothing is hand-edited.
+
+Running `python src/pipeline.py reproduce` rewrites the starred rows below from
+`scores/*.npz` in about fifteen seconds, and they should come back identical to
+what is committed.
 
 | Path | Produced by | Contents |
 |---|---|---|
-| `PAPER_RESULTS.md` | cell 12 | every number in the paper, with the table it belongs to |
-| `all_results.json` | cells 10–11ter | full per-seed record: splits, gate, models, ablation, SemiSync, conformal |
-| `scores/{ds}_seed{n}.npz` | cell 9 | calibrated probabilities and labels, calibration and test blocks |
-| `tables/paper_A_coverage.csv` | cell 12 | marginal against class-conditional coverage |
-| `tables/paper_C_price.csv` | cell 12 | alert volume against target fraud coverage |
-| `tables/paper_D_ncal_sweep.csv` | cell 13 | price and degeneracy against calibration fraud count |
-| `tables/paper_E_gap.csv` | cell 14 | the coverage dissociation, per seed |
-| `tables/paper_models.csv` | cell 12 | the three detectors, per seed |
-| `tables/paper_ablation.csv` | cell 12 | stage-wise ablation, raw cost |
-| `tables/paper_gate.csv` | cell 12 | learned blend weights, per seed |
-| `tables/table02_splits_*.csv` | cells 10–11ter | block sizes and fraud counts |
+| `scores/{ds}_seed{n}.npz` | `train` | calibrated probabilities and labels, calibration and test blocks |
+| `tables/paper_A_coverage.csv` * | `reproduce` | marginal against class-conditional coverage — **Table 3** |
+| `tables/paper_C_price.csv` * | `reproduce` | alert volume against target fraud coverage — **Table 4** |
+| `tables/paper_D_ncal_sweep.csv` * | `reproduce` | price and degeneracy against calibration fraud count — **Table 5** |
+| `tables/paper_E_gap.csv` * | `reproduce` | the coverage dissociation, per seed — **Figure 2** |
+| `tables/paper_wilcoxon.csv` * | `reproduce` | paired Wilcoxon on per-seed cost, Holm-corrected — **Table B.2** |
+| `tables/paper_models.csv` | `train` | the three detectors, per seed — **Table B.1** |
+| `tables/paper_ablation.csv` | `train` | stage-wise ablation, raw cost — **Table B.3** |
+| `tables/paper_gate.csv` | `train` | learned blend weights, per seed — Section 7.1 |
+| `tables/table02_splits_*.csv` | `train` | block sizes and fraud counts — **Table 2** |
+| `all_results.json` | `train` | full per-seed record: splits, gate, models, ablation, SemiSync, conformal |
+| `PAPER_RESULTS.md` | `train` | narrative dump of the above |
 
-Figures, in `../figures/`: `fig_coverage_price.png` (Fig. 2 of the paper),
-`fig_ncal_price.png` (Fig. 3), `fig_coverage_gap.png` and `fig_mechanism.png`
-(supporting material, not in the paper).
+Figures land in `../figures/` and map to the paper as:
+
+| File | Paper |
+|---|---|
+| `fig_coverage_gap.png` | Figure 2 — marginal against fraud-class coverage |
+| `fig_mechanism.png` | Figure 3 — the two score CDFs, one seed |
+| `fig_coverage_price.png` | Figure 4 — alert volume against target coverage |
+| `fig_ncal_price.png` | Figure 5 — price against calibration fraud count |
+
+Figure 1 of the paper is the protocol schematic and is drawn in the manuscript,
+not here.
 
 ## Naming bridge to the paper
 
-Generated files keep the pipeline's internal names; nothing is hand-edited.
-Read them as: `T` = ULB, `K` = Sparkov, `PS` = PaySim;
-`ADAPTIVE-CP-FRAUD` = the cost-sensitive detector, `HybridMeta-XGB` =
-**Hybrid-XGB** in the paper; ablation configs `full` / `no_stage1_uniform` /
-`no_stage2_spw` / `baseline_no_anomaly` = full pipeline / no learned weights /
-no cost gradient (SPW) / no anomaly features (= Baseline SPW).
+Generated files keep the pipeline's internal names. Read them as:
+`T` = ULB, `K` = Sparkov, `PS` = PaySim; `ADAPTIVE-CP-FRAUD` = the
+cost-sensitive detector, `HybridMeta-XGB` = **Hybrid-XGB** in the paper;
+ablation configs `full` / `no_stage1_uniform` / `no_stage2_spw` /
+`baseline_no_anomaly` = full pipeline / no learned weights / no cost gradient
+(SPW) / no anomaly features (= Baseline SPW).
+
+One column is deliberately not in the paper: `all_results.json` records a
+`"psd2"` block computed under the **marginal** conformal rule. The paper's
+fraud rate among approved transactions is the class-conditional one, in
+`paper_C_price.csv` as `lambda_approved_pct`. Do not compare the two.
 
 ## The .npz files are the point
 
@@ -40,5 +58,6 @@ z = np.load("results/scores/T_seed42.npz")
 p_cal, y_cal, p_test, y_test = z["p_cal"], z["y_cal"], z["p_test"], z["y_test"]
 ```
 
-Cells 12, 13 and 14 do exactly this. A reviewer can check Tables 2 and 3 and
-all four figures in about a minute, on a laptop, offline.
+`python src/pipeline.py reproduce` does exactly this for all thirteen files. A
+reviewer can check Tables 3, 4, 5 and B.2 and all four data figures in under a
+minute, on a laptop, offline.
