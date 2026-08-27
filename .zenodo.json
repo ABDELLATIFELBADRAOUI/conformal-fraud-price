@@ -2,7 +2,8 @@
   "title": "Code and results for \"Quantifying the Empirical Alert-Volume Cost of Class-Conditional Conformal Prediction for Card Fraud Detection Under the Revised EU Payment Services Directive\"",
   "description": "<p>Reproduction package. A four-way leak-free chronological protocol for card fraud detection, and a measurement of what a class-conditional conformal coverage guarantee costs in alert volume on three benchmarks (ULB, Sparkov, PaySim).</p><p>The archive includes the calibrated probability vectors on the calibration and test blocks for every dataset and seed, so every conformal table and figure in the paper can be recomputed in about fifteen seconds with <code>python src/pipeline.py reproduce</code> — without retraining, without xgboost and without downloading any dataset.</p>",
   "upload_type": "software",
-  "license": "MIT",
+  "publication_date": "2026-08-26",
+  "license": "mit",
   "access_right": "open",
   "creators": [
     {
