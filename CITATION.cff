@@ -32,7 +32,7 @@ authors:
       Kenitra, Morocco
 repository-code: 'https://github.com/ABDELLATIFELBADRAOUI/conformal-fraud-price'
 license: MIT
-version: 1.0.1
+version: 1.0.2
 date-released: '2026-08-26'
 keywords:
   - conformal prediction
